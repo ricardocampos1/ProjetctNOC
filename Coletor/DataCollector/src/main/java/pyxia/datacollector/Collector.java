@@ -4,6 +4,7 @@ import Handlers.HardDisk;
 import Handlers.Processor;
 import Handlers.RamMemory;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import oshi.util.FormatUtil;
 
 public class Collector {
@@ -36,8 +37,11 @@ public class Collector {
         System.out.println("--------------Disco Rígido----------------");
         System.out.println("Lista de discos");
         System.out.println(hd.setModelSize());
+        System.out.println(Arrays.toString(hd.setLocalLetter()));
+        System.out.println(Arrays.toString(hd.setFreeSpace()));
+        System.out.println(Arrays.toString(hd.setTotalSpace()));
+        System.out.println(Arrays.toString(hd.setUsingSpace()));
         System.out.println("------------------------------------------");
-
         System.out.println("|----------------------------------------|");
     }
 }
