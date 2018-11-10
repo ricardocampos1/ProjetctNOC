@@ -16,18 +16,18 @@ public class Processor implements Hardware {
         return this.name;
     }
 
-    public double setTemperature() {
+    public double getTemperature() {
         DecimalFormat df = new DecimalFormat("#.00");
         this.temperature = Double.parseDouble(df.format((hal.getSensors().getCpuTemperature() - 32) * 5 / 9).replace(",", "."));
         return this.temperature;
     }
 
-    public int setPhysicalCore() {
+    public int getPhysicalCore() {
         this.physicalCore = hal.getProcessor().getPhysicalProcessorCount();
         return this.physicalCore;
     }
 
-    public int setLogicalCore() {
+    public int getLogicalCore() {
         this.physicalCore = hal.getProcessor().getLogicalProcessorCount();
         return this.logicalCore;
     }
