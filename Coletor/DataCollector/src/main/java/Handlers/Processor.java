@@ -11,7 +11,7 @@ public class Processor implements Hardware {
     private int logicalCore;
     private double percent;
 
-    public String setName() {
+    public String getName() {
         this.name = hal.getProcessor().getName();
         return this.name;
     }
