@@ -1,6 +1,7 @@
 package Handlers;
 
 import Interfaces.Hardware;
+import java.text.DecimalFormat;
 
 public class Processor implements Hardware {
 
@@ -8,30 +9,32 @@ public class Processor implements Hardware {
     private double temperature;
     private int physicalCore;
     private int logicalCore;
-    private long frequency;
+    private double percent;
 
-    public String setName() {
+    public String getName() {
         this.name = hal.getProcessor().getName();
         return this.name;
     }
 
-    public double setTemperature() {
-        this.temperature = (hal.getSensors().getCpuTemperature() - 32) * 5 / 9;
+    public double getTemperature() {
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.temperature = Double.parseDouble(df.format((hal.getSensors().getCpuTemperature() - 32) * 5 / 9).replace(",", "."));
         return this.temperature;
     }
 
-    public int setPhysicalCore() {
+    public int getPhysicalCore() {
         this.physicalCore = hal.getProcessor().getPhysicalProcessorCount();
         return this.physicalCore;
     }
 
-    public int setLogicalCore() {
+    public int getLogicalCore() {
         this.physicalCore = hal.getProcessor().getLogicalProcessorCount();
         return this.logicalCore;
     }
 
-    public long setFrequency() {
-        this.frequency = hal.getProcessor().getVendorFreq();
-        return this.frequency;
+    public double getPercent() {
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.percent = Double.parseDouble(df.format(hal.getProcessor().getSystemCpuLoad() * 100).replace(",", "."));
+        return this.percent;
     }
 }
