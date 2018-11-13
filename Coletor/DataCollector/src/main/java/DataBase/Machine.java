@@ -1,4 +1,4 @@
-package Infra;
+package DataBase;
 
 import Handlers.Processor;
 import Handlers.RamMemory;
@@ -15,7 +15,7 @@ public class Machine {
         Azure dataBase = new Azure();
 
         String name_machine = "Nome da Maquina";
-        int id_user = 0;
+        int id_user = 1;
 
         SystemOperation so = new SystemOperation();
         Processor processor = new Processor();
