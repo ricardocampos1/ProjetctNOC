@@ -1,6 +1,6 @@
 # Java
 *.jar
-!Coletor\DataCollector\target\*.jar
+!**/DataCollector/target/*.jar
 *.war
 *.ear
 
