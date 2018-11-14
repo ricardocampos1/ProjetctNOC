@@ -1,6 +1,4 @@
 # Java
-*.jar
-!**/DataCollector/target/*.jar
 *.war
 *.ear
 
