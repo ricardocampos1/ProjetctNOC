@@ -33,7 +33,7 @@ public class Machine {
                             + ", physical_core, logical_core, ram_memory_total, id_user) values\n"
                             + "('" + name_machine + "', '" + so.getName() + " " + so.getVersion() + "',"
                             + " " + so.getArch() + ", '" + processor.getName() + "', " + processor.getPhysicalCore() + ","
-                            + " " + processor.getLogicalCore() + ", " + ramMemory.setTotal() + ", " + id_user + ")");
+                            + " " + processor.getLogicalCore() + ", " + ramMemory.getTotal() + ", " + id_user + ")");
                 }
             } catch (SQLException e) {
                 System.out.println(e.getErrorCode());
