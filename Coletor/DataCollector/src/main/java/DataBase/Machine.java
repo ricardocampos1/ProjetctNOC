@@ -1,4 +1,4 @@
-package Infra;
+package DataBase;
 
 import Handlers.Processor;
 import Handlers.RamMemory;
@@ -15,7 +15,7 @@ public class Machine {
         Azure dataBase = new Azure();
 
         String name_machine = "Nome da Maquina";
-        int id_user = 0;
+        int id_user = 1;
 
         SystemOperation so = new SystemOperation();
         Processor processor = new Processor();
@@ -33,7 +33,7 @@ public class Machine {
                             + ", physical_core, logical_core, ram_memory_total, id_user) values\n"
                             + "('" + name_machine + "', '" + so.getName() + " " + so.getVersion() + "',"
                             + " " + so.getArch() + ", '" + processor.getName() + "', " + processor.getPhysicalCore() + ","
-                            + " " + processor.getLogicalCore() + ", " + ramMemory.setTotal() + ", " + id_user + ")");
+                            + " " + processor.getLogicalCore() + ", " + ramMemory.getTotal() + ", " + id_user + ")");
                 }
             } catch (SQLException e) {
                 System.out.println(e.getErrorCode());
