@@ -1,0 +1,36 @@
+﻿#alterarPerfil {
+    background-color: blueviolet;
+}
+
+h1 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.alterarNome{
+    width:auto;
+    font-size: 1rem;
+    text-align:center;
+}
+
+#novoNome{
+    width: 100%;
+}
+
+#btnNome{
+    width:50%;
+}
+
+.alterarEmail {
+    font-size: 1rem;
+    text-align: center;
+}
+
+#novoEmail{
+    width:50%;
+}
+
+#btnEmail{
+    width:50%;
+}
+
