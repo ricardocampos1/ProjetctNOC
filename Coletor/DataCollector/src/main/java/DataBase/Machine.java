@@ -3,6 +3,7 @@ package DataBase;
 import Handlers.Processor;
 import Handlers.RamMemory;
 import Handlers.SystemOperation;
+import Screens.Login;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,11 +12,13 @@ import java.sql.SQLException;
 
 public class Machine {
 
+    public static int ID_MACHINE = 0;
+
     public void insertMachine() throws SQLException {
         Azure dataBase = new Azure();
 
         String name_machine = "Nome da Maquina";
-        int id_user = 1;
+        int id_user = Login.ID_USER;
 
         SystemOperation so = new SystemOperation();
         Processor processor = new Processor();
@@ -30,10 +33,10 @@ public class Machine {
                 if (resultSet.next() == false) {
                     dataBase.executeQuery("insert into tb_machine (name_machine, name_operation_system\n"
                             + ", architecture_operation_system, name_processor\n"
-                            + ", physical_core, logical_core, ram_memory_total, id_user) values\n"
+                            + ", physical_core, logical_core, ram_memory_total, id_user) output inserted.id_machine values\n"
                             + "('" + name_machine + "', '" + so.getName() + " " + so.getVersion() + "',"
                             + " " + so.getArch() + ", '" + processor.getName() + "', " + processor.getPhysicalCore() + ","
-                            + " " + processor.getLogicalCore() + ", " + ramMemory.getTotal() + ", " + id_user + ")");
+                            + " " + processor.getLogicalCore() + ", " + ramMemory.getTotal() + ", " + id_user + ")");                    
                 }
             } catch (SQLException e) {
                 System.out.println(e.getErrorCode());
