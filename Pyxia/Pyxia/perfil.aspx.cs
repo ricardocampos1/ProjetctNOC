@@ -77,7 +77,7 @@ namespace Pyxia
                         }
                         else
                         {
-                            Response.Write("<script>alert('Login Inválido')</script>");
+                            Response.Write("<script>alert('Senha Atual inválida')</script>");
                         }
                     }
                 }
