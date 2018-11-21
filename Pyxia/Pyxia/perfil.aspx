@@ -93,26 +93,26 @@
                 <form id="alterarPerfil" runat="server">
                     <div class="container">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-md-4 col-sm-4 clearfix">
                                 <div class="alterarNome">
                                   <h1>Alterar nome</h1>
-                                  <asp:TextBox runat="server" ID="novoNome" placeholder="Insira o novo nome" />
+                                  <asp:TextBox runat="server" ID="novoNome" placeholder="digite o novo nome" />
                                   <asp:Button runat="server" ID="btnNome" OnClick="btnNome_Click" Text="Enviar" />
                                 </div>
                             </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-sm-4 clearfix">
                                      <div class="alterarEmail">
                                          <h1>Alterar e-mail</h1>
-                                         <asp:TextBox runat="server" ID="novoEmail" placeholder="Insira o novo e-mail" TextMode="Email" />
+                                         <asp:TextBox runat="server" ID="novoEmail" placeholder="digite o novo e-mail" TextMode="Email" />
                                          <asp:Button runat="server" ID="btnEmail" OnClick="btnEmail_Click" Text="Enviar" />
                                      </div>
                                 </div>
                            
-                               <div class="col-4">
+                               <div class="col-md-4 col-sm-4 clearfix">
                                     <div class="alterarSenha">
                                         <h1>Alterar senha</h1>
-                                        <asp:TextBox runat="server" ID="senhaAtual" placeholder="Insira sua senha atual" TextMode="Password" />
-                                        <asp:TextBox runat="server" ID="senhaNova" placeholder="Insira a nova senha" TextMode="Password" />
+                                        <asp:TextBox runat="server" ID="senhaAtual" placeholder="digite sua senha atual" TextMode="Password" />
+                                        <asp:TextBox runat="server" ID="senhaNova" placeholder="digite a nova senha" TextMode="Password" />
                                         <asp:Button runat="server" ID="btnSenha" OnClick="btnSenha_Click" Text="Enviar" />
                                     </div>
                               </div>
