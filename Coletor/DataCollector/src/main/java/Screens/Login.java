@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
 
         Title = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnFechar = new javax.swing.JLabel();
         Fields = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txtUsername1 = new javax.swing.JLabel();
@@ -73,13 +73,13 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(390, 350));
         jLabel1.setMinimumSize(new java.awt.Dimension(390, 350));
 
-        jLabel2.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("X");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnFechar.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
+        btnFechar.setForeground(new java.awt.Color(255, 255, 255));
+        btnFechar.setText("X");
+        btnFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btnFecharMouseClicked(evt);
             }
         });
 
@@ -88,10 +88,10 @@ public class Login extends javax.swing.JFrame {
         TitleLayout.setHorizontalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jLabel2)
+                .addComponent(btnFechar)
                 .addContainerGap())
         );
         TitleLayout.setVerticalGroup(
@@ -101,7 +101,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -147,7 +147,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         Fields.add(btnLogin);
-        btnLogin.setBounds(90, 200, 210, 60);
+        btnLogin.setBounds(120, 200, 150, 50);
 
         txtPassword.setBackground(new java.awt.Color(4, 3, 25));
         txtPassword.setFont(new java.awt.Font("Text Me One", 0, 14)); // NOI18N
@@ -166,20 +166,32 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+        if ("".equals(txtUsername.getText())) {
+            JOptionPane.showMessageDialog(null, "Digite o usuário!", "Login", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        if ("".equals(txtPassword.getText())) {
+            JOptionPane.showMessageDialog(null, "Digite a senha!", "Login", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
         String stringConnection = "jdbc:sqlserver://pyxia.database.windows.net:1433;database=Pyxia;user=pyxia@pyxia;password=Admin@admin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
         String commandSQL = "select id_user, username, userpass from tb_user where username = '" + txtUsername.getText() + "' and userpass = '" + txtPassword.getText() + "'";
-        System.out.println(txtUsername.getText());
-        System.out.println(txtPassword.getText());
         try {
             Connection conn = DriverManager.getConnection(stringConnection);
             try (PreparedStatement preparedStatement = conn.prepareStatement(commandSQL);
                     ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next() == true) {
                     ID_USER = resultSet.getInt(1);
-                    JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!", "Login", JOptionPane.INFORMATION_MESSAGE);
-                    Machine m = new Machine();
-                    m.insertMachine();
+                    //nova tela
+                    conn.close();
+                    new UserMachine().setVisible(true);
+                    this.dispose();
+//                    JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!", "Login", JOptionPane.INFORMATION_MESSAGE);
+//                    Machine m = new Machine();
+//                    m.insertMachine();
                 } else {
+                    conn.close();
                     JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Login", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException e) {
@@ -190,9 +202,9 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void btnFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFecharMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_btnFecharMouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,9 +244,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Fields;
     private javax.swing.JPanel Title;
+    private javax.swing.JLabel btnFechar;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;

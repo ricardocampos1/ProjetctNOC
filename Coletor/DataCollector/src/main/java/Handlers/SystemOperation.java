@@ -12,6 +12,7 @@ public class SystemOperation {
     private final OperatingSystemVersion osv = os.getVersion();
     private String version;
     private int bitness;
+    private String hostName;
 
     public String getName() {
         this.name = os.getFamily();
@@ -20,11 +21,16 @@ public class SystemOperation {
 
     public String getVersion() {
         this.version = osv.getVersion();
-        return version;
+        return this.version;
     }
 
     public int getArch() {
-        bitness = os.getBitness();
-        return bitness;
+        this.bitness = os.getBitness();
+        return this.bitness;
+    }
+    
+    public String getHostName() {
+        this.hostName = os.getNetworkParams().getHostName();
+        return this.hostName;
     }
 }
