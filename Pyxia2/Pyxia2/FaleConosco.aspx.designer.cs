@@ -13,15 +13,6 @@ namespace Pyxia {
     public partial class FaleConosco {
         
         /// <summary>
-        /// Controle txtnome.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnome;
-        
-        /// <summary>
         /// Controle txtemail.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,14 @@ namespace Pyxia {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtassunto;
+        
+        /// <summary>
+        /// Controle BtnEnviar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEnviar;
     }
 }

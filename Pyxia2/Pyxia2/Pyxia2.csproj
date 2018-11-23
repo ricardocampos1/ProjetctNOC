@@ -121,7 +121,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Projeto.aspx" />
     <Content Include="Pyxia.csproj" />
-    <Content Include="Pyxia.csproj.user" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Pyxia.Master" />
@@ -152,6 +151,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="styleHome.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
