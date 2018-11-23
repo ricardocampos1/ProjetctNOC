@@ -148,26 +148,27 @@
                                                                                     //Legenda referente ao dado
                                                                                     label: "Teste Grafico Dashboard",
                                                                                     //Dados em relação ao conteudo acima
-                                                                                    data: [1, 5, 6, 9, 0, 0, 0, 0, 0, 1, 9],
+                                                                                    data: [],
                                                                                     borderWidht: 3,
                                                                                     borderColor: "rgba(15,259,989)",
                                                                                     background: "transparent",
                                                                                 }]
                                                                             }
                                                                         });
+                                                                        var i = 0;
                                                                         setInterval(() => {
                                                                             $.ajax({
-                                                                                type: 'GET',
+                                                                                type: 'POST',
                                                                                 contentType: 'application/json',
-                                                                                url: 'Ajax/AjaxUsoProcessador.aspx/getUsoProcessador',
+                                                                                url: 'PaginaAjax.aspx/getUltimoProcessador',
                                                                                 dataType: 'json',
-                                                                                data: {},
+                                                                                data: '{}',
                                                                                 success: function (data) {
-                                                                                    console.log(data)
-                                                                                    console.log('oi')
+                                                                                    LinhaGrafico.data.datasets[0].data[i] = data.d;
+                                                                                    i++;
+                                                                                    LinhaGrafico.update();
                                                                                 },
                                                                                 error: function (xhr, status, error) {
-                                                                                    console.log(xhr);
                                                                                     console.log('tchau')
                                                                                 }
                                                                             });
