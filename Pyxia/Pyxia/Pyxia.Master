@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Pyxia.master.cs" Inherits="Pyxia.Pyxia" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Pyxia</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" type="text/css" href=css/styleMaster.css>
+    <%-- Fonte CSS--%>
+    <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="wrapper"> 
+<div class="navbar">
+  <a href="http://localhost:49639/Homepage.aspx">Home</a>
+  <a href="http://localhost:49639/Cadastro.aspx"> Cadastro</a>
+  <a href="http://localhost:49639/Projeto.aspx">Sobre Nos</a>   
+    <a href="http://localhost:49639/FaleConosco.aspx">Fale Conosco</a> 
+   
+    <div>
+        
+        <%--Login Button--%>
+         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        
+        <button onclick="window.location.href='Login'" style="width:auto;">Login</button>
+     
+</div>
+
+</div>
+
+    </div>
+            <%--Parte de cada pagina--%>
+            <asp:ContentPlaceHolder ID="Conteudo" runat="server">
+            </asp:ContentPlaceHolder>
+            <%--Parte de cada pagina--%>
+
+     <%---Inicio footer--%>
+
+<div class="push">
+    
+            <footer id="myFooter">
+                <div class="container">
+                    <div class="row">
+                <div class="col-1">
+                    
+                    <h5> Comece já </h5>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <h5>Sobre nós </h5>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-3">
+                 <h5>Suporte</h5>
+                    <ul>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                     </div>
+             </div>
+                    <div>
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+
+             </div>
+	        </footer>
+            </div>
+        <div class="copy" style="background-color:#040319"> &copy; 2018 Pyxia.com</div>
+    <%--Fim footer--%>
+  
+</body>
+</html>

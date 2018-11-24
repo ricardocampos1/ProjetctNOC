@@ -31,6 +31,11 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>7.0.0.jre8</version>
         </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
     </dependencies>
     
     <build>
@@ -48,7 +53,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        pyxia.datacollector.Collector
+                                        Screens.Login
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -61,5 +66,11 @@
             </plugin>
         </plugins>
     </build>
-            
+    <repositories>
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
 </project>
