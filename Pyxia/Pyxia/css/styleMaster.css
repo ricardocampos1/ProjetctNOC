@@ -103,7 +103,7 @@ body {
 /*Footer*/
 .wrapper {
     min-height: 100%;
-    margin-bottom: 40%; /*aqui, você altera a distância entre o menu e o conteudo*/
+    margin-bottom:0%; /*aqui, você altera a distância entre o menu e o conteudo*/
 }
 
 #myFooter, .push { /*não mexa */
