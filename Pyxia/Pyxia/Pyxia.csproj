@@ -139,6 +139,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\2.1.jpeg" />
+    <Content Include="img\fundo.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\4.jpg" />
     <Content Include="About.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\default-css.css" />
@@ -172,6 +177,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="FaleConosco.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -183,6 +189,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="img\img0.png" />
     <Content Include="img\img_avatar2.png" />
     <Content Include="Login.aspx" />
     <Content Include="Projeto.aspx" />
@@ -228,6 +236,8 @@
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleMaster.css" />
     <Content Include="css\styleCadastro.css" />
+    <Content Include="css\styleProjeto.css" />
+    <Content Include="css\styleFale.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -273,8 +283,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FaleConosco.aspx.cs">
+      <DependentUpon>FaleConosco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaleConosco.aspx.designer.cs">
+      <DependentUpon>FaleConosco.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

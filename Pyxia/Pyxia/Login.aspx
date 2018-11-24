@@ -25,11 +25,10 @@
       <label>
         <input type="checkbox" checked="checked" name="remember"> Lembre-me
       </label>
+        <span class="psw">Esqueceu <a href="#">a sua senha?</a></span>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <span class="psw">Esqueceu <a href="#">a sua senha?</a></span>
-    </div>
+    
   </form>
 </div>
 
