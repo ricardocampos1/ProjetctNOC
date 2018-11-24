@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Pyxia.master.cs" Inherits="Pyxia.Pyxia" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Pyxia</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+   <link rel="stylesheet" type="text/css" href="css/styleMaster.css" >
+    <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="wrapper"> 
+<div class="topnav" id="myTopnav">
+  <a href="Homepage.aspx"class="active">Home</a>
+  <a href="Cadastro.aspx"> Cadastro</a>
+  <a href="Projeto.aspx">Sobre Nós</a>   
+    <a href="FaleConosco.aspx">Fale Conosco</a> 
+  
+    <a href="Login.aspx">Login</a>  
+   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+   </a>
+               
+
+</div>
+
+    </div>
+            <%--Parte de cada pagina--%>
+            <asp:ContentPlaceHolder ID="Conteudo" runat="server">
+            </asp:ContentPlaceHolder>
+            <%--Parte de cada pagina--%>
+
+     <%---Inicio footer--%>
+
+    <div class="push">
+            <footer id="myFooter">
+                <div class="container">
+                    <div class="row">
+                <div class="col-sm-3">
+                    <h5> Comece já </h5>
+                    <ul>
+                        <li><a href="home">Início</a></li>
+                        <li><a href="login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Sobre nós </h5>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>                       
+                    </ul>
+                </div>             
+		        </div>
+                </div>
+                  <div >
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+	        </footer>
+              </div>
+   
+              
+           <div class="copy" style="background-color:#040319"> &copy; 2018 Pyxia.com</div>
+        <%--Fim footer--%>
+          
+    <script>
+      function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+   }
+</script>
+        
+        
+  
+ 
+
+</body>
+</html>
