@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class MachineHD extends Thread {
 
-    int id_machine = 1;
+    int id_machine = Machine.ID_MACHINE;
 
     public MachineHD() {
         start();
@@ -24,7 +24,7 @@ public class MachineHD extends Thread {
             Azure dataBase = new Azure();
             HardDisk hd = new HardDisk();
             String stringConnection = "jdbc:sqlserver://pyxia.database.windows.net:1433;database=Pyxia;user=pyxia@pyxia;password=Admin@admin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            String commandSQL = "select * from tb_hard_disk where id_machine = " + this.id_machine;
+            String commandSQL = "select id_machine from tb_hard_disk where id_machine = " + this.id_machine;
             Thread thread = new Thread();
             thread.sleep(10 * 1000);
             while (true) {
@@ -48,7 +48,7 @@ public class MachineHD extends Thread {
                                 return infoHD;
                             }).forEachOrdered((infoHD) -> {
                                 dataBase.executeQuery("update tb_hard_disk set total_free_space_hd = " + Long.parseLong(infoHD[2]) + ", total_usable_space_hd = " + Long.parseLong(infoHD[3]) + " "
-                                        + "where absolut_path = '" + infoHD[0] + "'");
+                                        + "where absolut_path = '" + infoHD[0] + "' and id_machine = " + this.id_machine);
                             });
                         }
                     } catch (SQLException e) {

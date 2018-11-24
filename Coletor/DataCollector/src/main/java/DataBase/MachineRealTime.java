@@ -12,8 +12,6 @@ import java.util.logging.Logger;
 
 public class MachineRealTime extends Thread {
 
-    int id_machine = 1;
-
     public MachineRealTime() {
         start();
     }
@@ -24,7 +22,7 @@ public class MachineRealTime extends Thread {
             Thread thread = new Thread();
             Azure dataBase = new Azure();
             String stringConnection = "jdbc:sqlserver://pyxia.database.windows.net:1433;database=Pyxia;user=pyxia@pyxia;password=Admin@admin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            String commandSQL = "select * from tb_real_time_machine where id_machine = " + this.id_machine;
+            String commandSQL = "select * from tb_real_time_machine where id_machine = " + Machine.ID_MACHINE;
             Processor processor = new Processor();
             RamMemory ramMemory = new RamMemory();
             thread.sleep(10 * 1000);
@@ -37,13 +35,13 @@ public class MachineRealTime extends Thread {
                             dataBase.executeQuery("insert into tb_real_time_machine (processor_usage, processor_temperature"
                                     + ", ram_memory_usage, ram_memory_available, id_machine) values "
                                     + "(" + processor.getPercent() + ", " + processor.getTemperature() + ""
-                                    + ", " + ramMemory.getUsage() + ", " + ramMemory.getAvailable() + ", " + this.id_machine + ")");
+                                    + ", " + ramMemory.getUsage() + ", " + ramMemory.getAvailable() + ", " + Machine.ID_MACHINE + ")");
                         } else {
                             dataBase.executeQuery("update tb_real_time_machine set processor_usage = " + processor.getPercent() + ""
                                     + ", processor_temperature = " + processor.getTemperature() + ""
                                     + ", ram_memory_usage = " + ramMemory.getUsage() + ""
                                     + ", ram_memory_available = " + ramMemory.getAvailable() + ""
-                                    + ", id_machine = " + this.id_machine);
+                                    + ", id_machine = " + Machine.ID_MACHINE);
                         }
                     }
                 } catch (SQLException ex) {
