@@ -7,6 +7,7 @@ package Screens;
 
 import DataBase.Machine;
 import java.awt.Dimension;
+import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -43,8 +44,8 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         Title = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnFechar = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
         Fields = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txtUsername1 = new javax.swing.JLabel();
@@ -65,21 +66,21 @@ public class Login extends javax.swing.JFrame {
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Login");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel1.setMaximumSize(new java.awt.Dimension(390, 350));
-        jLabel1.setMinimumSize(new java.awt.Dimension(390, 350));
+        lblTitle.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Login");
+        lblTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTitle.setMaximumSize(new java.awt.Dimension(390, 350));
+        lblTitle.setMinimumSize(new java.awt.Dimension(390, 350));
 
-        btnFechar.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
-        btnFechar.setForeground(new java.awt.Color(255, 255, 255));
-        btnFechar.setText("X");
-        btnFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnClose.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(255, 255, 255));
+        btnClose.setText("X");
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFecharMouseClicked(evt);
+                btnCloseMouseClicked(evt);
             }
         });
 
@@ -89,19 +90,19 @@ public class Login extends javax.swing.JFrame {
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
                 .addContainerGap(57, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(btnFechar)
+                .addComponent(btnClose)
                 .addContainerGap())
         );
         TitleLayout.setVerticalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitleLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -202,9 +203,9 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
-    private void btnFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFecharMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_btnFecharMouseClicked
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -244,10 +245,10 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Fields;
     private javax.swing.JPanel Title;
-    private javax.swing.JLabel btnFechar;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JLabel txtUsername1;

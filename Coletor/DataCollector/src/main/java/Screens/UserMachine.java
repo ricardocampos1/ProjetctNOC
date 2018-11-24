@@ -10,12 +10,8 @@ import DataBase.MachineHD;
 import DataBase.MachineRealTime;
 import java.awt.Dimension;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import oshi.SystemInfo;
-import oshi.hardware.HardwareAbstractionLayer;
-import oshi.software.os.OperatingSystem;
 
 /**
  *
@@ -29,14 +25,9 @@ public class UserMachine extends javax.swing.JFrame {
     public UserMachine() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Dimension size = new Dimension(390, 350);
+        Dimension size = new Dimension(390, 175);
         this.setSize(size);
         this.setMinimumSize(size);
-        cboListMachine.setVisible(true);
-        btnStart.setVisible(true);
-        lblNameMachine.setVisible(false);
-        txtUserMachine.setVisible(false);
-        btnAddMachine.setVisible(false);
     }
 
     /**
@@ -49,22 +40,14 @@ public class UserMachine extends javax.swing.JFrame {
     private void initComponents() {
 
         Title = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnFechar = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        cboListMachine = new javax.swing.JComboBox<>();
-        btnCapture = new javax.swing.JButton();
-        btnAdd = new javax.swing.JButton();
-        txtUserMachine = new javax.swing.JTextField();
-        btnStart = new javax.swing.JToggleButton();
-        lblNameMachine = new javax.swing.JLabel();
-        btnAddMachine = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
+        Fields = new javax.swing.JPanel();
+        btnStart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Maquinas dos Usuários");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(390, 350));
-        setMinimumSize(new java.awt.Dimension(390, 350));
+        setMaximumSize(new java.awt.Dimension(390, 175));
+        setMinimumSize(new java.awt.Dimension(390, 175));
         setUndecorated(true);
         getContentPane().setLayout(null);
 
@@ -72,21 +55,21 @@ public class UserMachine extends javax.swing.JFrame {
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Machine");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel1.setMaximumSize(new java.awt.Dimension(390, 350));
-        jLabel1.setMinimumSize(new java.awt.Dimension(390, 350));
+        lblTitle.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Coleta de Dados");
+        lblTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTitle.setMaximumSize(new java.awt.Dimension(390, 350));
+        lblTitle.setMinimumSize(new java.awt.Dimension(390, 350));
 
-        btnFechar.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
-        btnFechar.setForeground(new java.awt.Color(255, 255, 255));
-        btnFechar.setText("X");
-        btnFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnClose.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(255, 255, 255));
+        btnClose.setText("X");
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFecharMouseClicked(evt);
+                btnCloseMouseClicked(evt);
             }
         });
 
@@ -95,160 +78,65 @@ public class UserMachine extends javax.swing.JFrame {
         TitleLayout.setHorizontalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(btnFechar)
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(btnClose)
                 .addContainerGap())
         );
         TitleLayout.setVerticalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitleLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(Title);
         Title.setBounds(0, 0, 390, 80);
 
-        jPanel2.setBackground(new java.awt.Color(3, 4, 25));
-        jPanel2.setLayout(null);
-
-        cboListMachine.setBackground(new java.awt.Color(3, 4, 25));
-        cboListMachine.setFont(new java.awt.Font("Text Me One", 0, 20)); // NOI18N
-        cboListMachine.setForeground(new java.awt.Color(255, 255, 255));
-        cboListMachine.setMaximumRowCount(5);
-        cboListMachine.setModel(cboListMachine.getModel());
-        jPanel2.add(cboListMachine);
-        cboListMachine.setBounds(40, 110, 320, 48);
-
-        btnCapture.setBackground(new java.awt.Color(3, 4, 25));
-        btnCapture.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
-        btnCapture.setForeground(new java.awt.Color(17, 160, 143));
-        btnCapture.setText("Capturar");
-        btnCapture.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        btnCapture.setBorderPainted(false);
-        btnCapture.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCaptureMouseClicked(evt);
-            }
-        });
-        jPanel2.add(btnCapture);
-        btnCapture.setBounds(0, 0, 190, 40);
-
-        btnAdd.setBackground(new java.awt.Color(3, 4, 25));
-        btnAdd.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(17, 160, 143));
-        btnAdd.setText("Adicionar");
-        btnAdd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        btnAdd.setBorderPainted(false);
-        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddMouseClicked(evt);
-            }
-        });
-        jPanel2.add(btnAdd);
-        btnAdd.setBounds(190, 0, 200, 40);
-
-        txtUserMachine.setBackground(new java.awt.Color(3, 4, 25));
-        txtUserMachine.setFont(new java.awt.Font("Text Me One", 0, 20)); // NOI18N
-        txtUserMachine.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtUserMachine);
-        txtUserMachine.setBounds(40, 110, 320, 50);
+        Fields.setBackground(new java.awt.Color(4, 3, 25));
+        Fields.setMaximumSize(new java.awt.Dimension(390, 175));
+        Fields.setMinimumSize(new java.awt.Dimension(390, 175));
+        Fields.setLayout(null);
 
         btnStart.setBackground(new java.awt.Color(17, 160, 143));
         btnStart.setFont(new java.awt.Font("Text Me One", 0, 30)); // NOI18N
+        btnStart.setForeground(new java.awt.Color(255, 255, 255));
         btnStart.setText("Iniciar");
-        btnStart.setMaximumSize(new java.awt.Dimension(113, 47));
-        btnStart.setMinimumSize(new java.awt.Dimension(113, 47));
+        btnStart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnStart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnStartMouseClicked(evt);
             }
         });
-        btnStart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStartActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnStart);
-        btnStart.setBounds(120, 190, 143, 51);
+        Fields.add(btnStart);
+        btnStart.setBounds(100, 20, 190, 50);
 
-        lblNameMachine.setFont(new java.awt.Font("Text Me One", 0, 18)); // NOI18N
-        lblNameMachine.setForeground(new java.awt.Color(255, 255, 255));
-        lblNameMachine.setText("Nome da Maquina");
-        jPanel2.add(lblNameMachine);
-        lblNameMachine.setBounds(40, 64, 320, 40);
-
-        btnAddMachine.setBackground(new java.awt.Color(17, 160, 143));
-        btnAddMachine.setFont(new java.awt.Font("Text Me One", 0, 30)); // NOI18N
-        btnAddMachine.setText("Adicionar");
-        btnAddMachine.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddMachineMouseClicked(evt);
-            }
-        });
-        btnAddMachine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddMachineActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnAddMachine);
-        btnAddMachine.setBounds(110, 190, 170, 50);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 80, 390, 270);
+        getContentPane().add(Fields);
+        Fields.setBounds(0, 80, 390, 110);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFecharMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_btnFecharMouseClicked
-
-    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnStartActionPerformed
-
-    private void btnCaptureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCaptureMouseClicked
-        cboListMachine.setVisible(true);
-        btnStart.setVisible(true);
-        lblNameMachine.setVisible(false);
-        txtUserMachine.setVisible(false);
-        btnAddMachine.setVisible(false);
-    }//GEN-LAST:event_btnCaptureMouseClicked
-
-    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
-        cboListMachine.setVisible(false);
-        btnStart.setVisible(false);
-        lblNameMachine.setVisible(true);
-        txtUserMachine.setVisible(true);
-        btnAddMachine.setVisible(true);
-    }//GEN-LAST:event_btnAddMouseClicked
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     private void btnStartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStartMouseClicked
-        // Starta serviço
-    }//GEN-LAST:event_btnStartMouseClicked
-
-    private void btnAddMachineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMachineMouseClicked
-        // Adicionar maquina
-        Machine m = new Machine();
+        btnStart.setText("Iniciado...");
+        Machine machine = new Machine();
         try {
-            m.insertMachine();
+            machine.insertMachine();
         } catch (SQLException ex) {
             Logger.getLogger(UserMachine.class.getName()).log(Level.SEVERE, null, ex);
         }
         new MachineHD();
         new MachineRealTime();
-    }//GEN-LAST:event_btnAddMachineMouseClicked
-
-    private void btnAddMachineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMachineActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddMachineActionPerformed
+    }//GEN-LAST:event_btnStartMouseClicked
 
     /**
      * @param args the command line arguments
@@ -286,16 +174,10 @@ public class UserMachine extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Fields;
     private javax.swing.JPanel Title;
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnAddMachine;
-    private javax.swing.JButton btnCapture;
-    private javax.swing.JLabel btnFechar;
-    private javax.swing.JToggleButton btnStart;
-    private javax.swing.JComboBox<String> cboListMachine;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblNameMachine;
-    private javax.swing.JTextField txtUserMachine;
+    private javax.swing.JLabel btnClose;
+    private javax.swing.JButton btnStart;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
