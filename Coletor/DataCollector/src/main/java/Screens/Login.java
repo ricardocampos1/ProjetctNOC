@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author 51073
  */
 public class Login extends javax.swing.JFrame {
-
+    
     public static int ID_USER = 0;
 
     /**
@@ -46,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         Title = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
+        btnMinimize = new javax.swing.JLabel();
         Fields = new javax.swing.JPanel();
         txtUsername = new javax.swing.JTextField();
         txtUsername1 = new javax.swing.JLabel();
@@ -84,14 +85,28 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        btnMinimize.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
+        btnMinimize.setForeground(new java.awt.Color(255, 255, 255));
+        btnMinimize.setText("_");
+        btnMinimize.setToolTipText("");
+        btnMinimize.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMinimizeMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
         Title.setLayout(TitleLayout);
         TitleLayout.setHorizontalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(56, Short.MAX_VALUE)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(23, 23, 23)
+                .addComponent(btnMinimize)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnClose)
                 .addContainerGap())
         );
@@ -102,7 +117,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMinimize))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -171,7 +188,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Digite o usuário!", "Login", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-
+        
         if ("".equals(txtPassword.getText())) {
             JOptionPane.showMessageDialog(null, "Digite a senha!", "Login", JOptionPane.INFORMATION_MESSAGE);
             return;
@@ -206,6 +223,10 @@ public class Login extends javax.swing.JFrame {
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_btnMinimizeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -247,6 +268,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel Title;
     private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel btnMinimize;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPasswordField txtPassword;

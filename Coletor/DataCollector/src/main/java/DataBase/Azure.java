@@ -11,74 +11,84 @@ public class Azure {
     private final String connectionSQL = "jdbc:sqlserver://pyxia.database.windows.net:1433;database=Pyxia;user=pyxia@pyxia;password=Admin@admin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
     private String commandSQL;
 
-    public String executeQuery(String typeStatement) {
+    public int executeQuery(String typeStatement) {
+        int resultRow = 0;
         try (Connection conn = DriverManager.getConnection(connectionSQL)) {
             this.commandSQL = typeStatement;
             String detectType = typeStatement.substring(0, 6).toUpperCase();
             if (null == detectType) {
                 conn.close();
-                return "Comando SQL não identificado, conexão com o banco fechada.";
+                System.out.println("Comando SQL não identificado, conexão com o banco fechada.");
             } else {
                 switch (detectType) {
                     case "SELECT":
-                        SelectCommand(conn);
+                        resultRow = SelectCommand(conn);
                         break;
                     case "INSERT":
-                        InsertCommand(conn);
+                        resultRow = InsertCommand(conn);
                         break;
                     case "UPDATE":
-                        UpdateCommand(conn);
+                        resultRow = UpdateCommand(conn);
                         break;
                     case "DELETE":
-                        DeleteCommand(conn);
+                        resultRow = DeleteCommand(conn);
                         break;
                     default:
                         conn.close();
-                        return "Comando SQL não identificado, conexão com o banco fechada.";
+                        System.out.println("Comando SQL não identificado, conexão com o banco fechada.");
                 }
             }
             conn.close();
         } catch (SQLException e) {
-            return "Conexão não estabelecida\n" + e.getErrorCode();
+             System.out.println("Conexão não estabelecida\n" + e.getErrorCode());
         }
-        return "Comando realizado com sucesso";
+        System.out.println("Comando realizado com sucesso");
+        return resultRow;
     }
 
-    private void SelectCommand(Connection conn) {
+    private int SelectCommand(Connection conn) {
+        int select_id = 0;
         try (PreparedStatement preparedStatement = conn.prepareStatement(this.commandSQL);
                 ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
-                System.out.println(resultSet.getInt(1));
+                select_id = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
         }
+        return select_id;
     }
 
-    private void InsertCommand(Connection conn) {
+    private int InsertCommand(Connection conn) {
+        int rowsAffected = 0;
         try (PreparedStatement preparedStatement = conn.prepareStatement(this.commandSQL)) {
-            int rowsAffected = preparedStatement.executeUpdate();
+            rowsAffected = preparedStatement.executeUpdate();
             System.out.println(rowsAffected + " linha(s) inserida(s)");
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
         }
+        return rowsAffected;
     }
 
-    private void UpdateCommand(Connection conn) {
+    private int UpdateCommand(Connection conn) {
+        int rowsAffected = 0;
         try (PreparedStatement preparedStatement = conn.prepareStatement(this.commandSQL)) {
-            int rowsAffected = preparedStatement.executeUpdate();
+            rowsAffected = preparedStatement.executeUpdate();
             System.out.println(rowsAffected + " linha(s) alterada(s)");
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
         }
+        return rowsAffected;
     }
 
-    private void DeleteCommand(Connection conn) {
+    private int DeleteCommand(Connection conn) {
+        int rowsAffected = 0;
         try (PreparedStatement preparedStatement = conn.prepareStatement(this.commandSQL)) {
-            int rowsAffected = preparedStatement.executeUpdate();
-            System.out.println(rowsAffected + " linha(s) deletada(s)");
+            rowsAffected = preparedStatement.executeUpdate();
+            System.out.println(rowsAffected + " linha(s) alterada(s)");
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
         }
+        return rowsAffected;
     }
 }
