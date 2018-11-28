@@ -18,7 +18,7 @@ public class Processor implements Hardware {
 
     public double getTemperature() {
         DecimalFormat df = new DecimalFormat("#.00");
-        this.temperature = Double.parseDouble(df.format((hal.getSensors().getCpuTemperature() - 32) * 5 / 9).replace(",", "."));
+        this.temperature = Double.parseDouble(df.format(hal.getSensors().getCpuTemperature()).replace(",", "."));
         return this.temperature;
     }
 
@@ -33,8 +33,7 @@ public class Processor implements Hardware {
     }
 
     public double getPercent() {
-        DecimalFormat df = new DecimalFormat("#.00");
-        this.percent = Double.parseDouble(df.format(hal.getProcessor().getSystemCpuLoad() * 100).replace(",", "."));
+        this.percent = hal.getProcessor().getSystemCpuLoad();
         return this.percent;
     }
 }
