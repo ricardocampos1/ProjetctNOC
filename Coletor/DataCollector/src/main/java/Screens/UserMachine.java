@@ -40,13 +40,13 @@ public class UserMachine extends javax.swing.JFrame {
     private void initComponents() {
 
         Title = new javax.swing.JPanel();
-        lblTitle = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
+        btnMinimize = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         Fields = new javax.swing.JPanel();
         btnStart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(390, 175));
         setMinimumSize(new java.awt.Dimension(390, 175));
         setUndecorated(true);
         getContentPane().setLayout(null);
@@ -54,14 +54,6 @@ public class UserMachine extends javax.swing.JFrame {
         Title.setBackground(new java.awt.Color(150, 0, 237));
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        lblTitle.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Coleta de Dados");
-        lblTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        lblTitle.setMaximumSize(new java.awt.Dimension(390, 350));
-        lblTitle.setMinimumSize(new java.awt.Dimension(390, 350));
 
         btnClose.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,26 +65,50 @@ public class UserMachine extends javax.swing.JFrame {
             }
         });
 
+        btnMinimize.setFont(new java.awt.Font("Text Me One", 1, 24)); // NOI18N
+        btnMinimize.setForeground(new java.awt.Color(255, 255, 255));
+        btnMinimize.setText("_");
+        btnMinimize.setToolTipText("");
+        btnMinimize.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMinimizeMouseClicked(evt);
+            }
+        });
+
+        lblTitle.setFont(new java.awt.Font("Text Me One", 1, 36)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Coleta de Dados");
+        lblTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblTitle.setMaximumSize(new java.awt.Dimension(390, 350));
+        lblTitle.setMinimumSize(new java.awt.Dimension(390, 350));
+
         javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
         Title.setLayout(TitleLayout);
         TitleLayout.setHorizontalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMinimize)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnClose)
                 .addContainerGap())
         );
         TitleLayout.setVerticalGroup(
             TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitleLayout.createSequentialGroup()
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 5, Short.MAX_VALUE))
-            .addGroup(TitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMinimize))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleLayout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(Title);
@@ -134,9 +150,13 @@ public class UserMachine extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(UserMachine.class.getName()).log(Level.SEVERE, null, ex);
         }
-        new MachineHD();
-        new MachineRealTime();
+        new MachineRealTime(machine.getId_machine());
+        new MachineHD(machine.getId_machine());
     }//GEN-LAST:event_btnStartMouseClicked
+
+    private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_btnMinimizeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -177,6 +197,7 @@ public class UserMachine extends javax.swing.JFrame {
     private javax.swing.JPanel Fields;
     private javax.swing.JPanel Title;
     private javax.swing.JLabel btnClose;
+    private javax.swing.JLabel btnMinimize;
     private javax.swing.JButton btnStart;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
