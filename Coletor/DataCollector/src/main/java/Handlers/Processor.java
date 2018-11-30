@@ -33,7 +33,8 @@ public class Processor implements Hardware {
     }
 
     public double getPercent() {
-        this.percent = hal.getProcessor().getSystemCpuLoad();
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.percent = Double.parseDouble(df.format(hal.getProcessor().getSystemCpuLoad()).replace(",", "."));
         return this.percent;
     }
 }
