@@ -1,0 +1,111 @@
+﻿#alterarPerfil {
+    margin-top:10%;
+}
+
+h1 {
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(4, 3, 25);
+}
+
+.alterarNome {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#novoNome {
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: solid;
+    background-color: #F3F8FB;
+}
+
+#btnNome {
+    width: 30%;
+    margin-top: 5%;
+    background-color: rgb(17, 160, 143);
+    border:none;
+    border-radius:4px;
+    color:#fff;
+}
+
+.alterarEmail {
+    font-size: 1rem;
+    text-align: center;
+    margin-top:5%;
+}
+
+#novoEmail {
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: solid;
+    background-color: #F3F8FB;
+}
+
+#btnEmail {
+    width: 30%;
+    margin-top: 5%;
+    background-color: rgb(17, 160, 143);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.alterarSenha {
+    width: auto;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#senhaAtual {
+    width: 49%;
+    margin-top: 5%;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: solid;
+    background-color: #F3F8FB;
+}
+
+#senhaNova {
+    width: 49%;
+    margin-top: 5%;
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: solid;
+    background-color: #F3F8FB;
+}
+
+#btnSenha {
+    width: 30%;
+    margin-top: 5%;
+    background-color: rgb(17, 160, 143);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+#btnNome:hover {
+    background-color: rgb(150, 0, 237);
+}
+
+#btnEmail:hover {
+    background-color: rgb(150, 0, 237);
+}
+
+#btnSenha:hover {
+    background-color: rgb(150, 0, 237);
+}
