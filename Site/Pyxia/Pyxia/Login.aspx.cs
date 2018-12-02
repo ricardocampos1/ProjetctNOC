@@ -48,7 +48,7 @@ namespace Pyxia
                         {
                             Session["name_user"] = reader.GetString(1);
                             Session.Timeout = 10;
-
+                            Session["id_user"] = reader.GetValue(0).ToString();
                             Response.Redirect("dashboard.aspx");
                         }
                         else
