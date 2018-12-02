@@ -18,7 +18,7 @@
     <!-- others css -->
     <link rel="stylesheet" href="/assets/css/typography.css" />
     <link rel="stylesheet" href="/assets/css/default-css.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -51,14 +51,8 @@
                                 <li>
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="ti-desktop"></i><span>Computadores</span></a>
                                     <asp:DropDownList ID="ddlMachine" runat="server" AppendDataBoundItems="true">
-                                        <asp:ListItem Text="Teste" Value="0" />
                                     </asp:DropDownList>
-                                    <%--<ul class="collapse">
-                                    <li><a href="accordion.html">Vazio</a></li>
-                                    <li><a href="alert.html">Vazio</a></li>
-                                    <li><a href="badge.html">Vazio</a></li>
-                                    <li><a href="button.html">Vazio</a></li>
-                                </ul>--%>
+                             
                                 </li>
                                 <li>
                                     <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>

@@ -18,9 +18,8 @@ namespace Pyxia
 
         protected void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            Session["id_user"] = null;
             using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
+                {
 
                 conn.Open();
                 
@@ -48,7 +47,6 @@ namespace Pyxia
                         if (reader.Read() == true)
                         {
                             Session["name_user"] = reader.GetString(1);
-
                             Session.Timeout = 10;
 
                             Response.Redirect("dashboard.aspx");
