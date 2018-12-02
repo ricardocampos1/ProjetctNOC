@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pyxia.Master" AutoEventWireup="true" CodeBehind="FaleConosco.aspx.cs" Inherits="Pyxia.FaleConosco" %>
 <asp:Content ID="Conteudo" ContentPlaceHolderID="Conteudo" runat="server">
-    <div>
+  <div>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/styleFale.css">
          <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
     </div>
@@ -15,16 +16,14 @@
 
                        <form class="formulario" runat="server">                     
                              
-                        <asp:TextBox ID="txtnome" placeholder="informe seu nome" runat="server" ></asp:TextBox>
-                        <asp:TextBox ID="txtemail" placeholder="informe seu e-mail" runat="server"></asp:TextBox>
-                        <asp:TextBox ID="txtassunto" placeholder="digite o assunto" runat="server"></asp:TextBox>
-
+                        <asp:TextBox ID="txtemail" type="email" placeholder="informe seu Email" runat="server" CssClass="input1" required ></asp:TextBox>
+                        <asp:TextBox ID="txtassunto" placeholder="informe o assunto " runat="server" CssClass="input2" required></asp:TextBox>
+                        <asp:TextBox ID="TextArea1" TextMode="multiline" Columns="50" Rows="5" runat="server" placeholder="Digite aqui" />                    
+                           <asp:Button ID="BtnEnviar"  runat="server" Text="Enviar" OnClick="BtnEnviar_Click" CssClass="botão" />
                         </form>
                        </div>
                    </div>
                </div>
         </div>
-    <div id="btnEnviar" style="position: relative; padding-left: 11px; margin-left: 391px;">
-         <button >Enviar</button>
-   </div>
+   
 </asp:Content>
