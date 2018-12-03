@@ -132,28 +132,7 @@
                                                                         <canvas class="line-chart" width="900" height="450"></canvas>
                                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
                                                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                                                        <script>
-                                                                            //Variavel javascript que faz referencia com a tag line-chart( para apresentação do grafico)
-                                                                            var ctx = document.getElementsByClassName("line-chart");
-                                                                            // Variavel necessaria para criação do grafico
-                                                                            var LinhaGrafico = new Chart(ctx, {
-                                                                                // Colocar o tipo do grafico
-                                                                                type: 'line',
-                                                                                // Conteudos apresentados nestes graficos
-                                                                                data: {
-                                                                                    //legenda linha horizontal
-                                                                                    labels: ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"],
-                                                                                    datasets: [{
-                                                                                        //Legenda referente ao dado
-                                                                                        label: "Teste Grafico Dashboard",
-                                                                                        //Dados em relação ao conteudo acima
-                                                                                        data: [1, 5, 6, 9, 0, 0, 0, 0, 0, 1, 9],
-                                                                                        borderWidht: 3,
-                                                                                        borderColor: "rgba(15,259,989)",
-                                                                                        background: "transparent",
-                                                                                    }]
-                                                                                }
-                                                                            });
+                                                                        <script src ="Scripts/graficoProcessador.js">                                                                            
                                                                         </script>
                                                                     </div>
                                                                 </div>
@@ -182,28 +161,7 @@
                                                                     <!-- col-xs-(1-12) col-sm col-md col-lg -->
                                                                     <div id="verview-chart2">
                                                                         <canvas class="grafico" id="bar-chart" width="900" height="450"></canvas>
-                                                                        <script>
-                                                                            new Chart(document.getElementById("bar-chart"), {
-                                                                                type: 'bar',
-                                                                                data: {
-                                                                                    labels: ["A definir", "A definir", "A definir", "A definir", "A definir"],
-                                                                                    datasets: [
-                                                                                        {
-                                                                                            label: "Processador",
-                                                                                            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                                                                                            data: [2478, 5267, 734, 784, 433]
-                                                                                        }
-                                                                                    ]
-                                                                                },
-                                                                                options: {
-                                                                                    legend: { display: false },
-                                                                                    title: {
-                                                                                        display: true,
-                                                                                        text: 'Desempenho processador'
-                                                                                    }
-                                                                                }
-                                                                            });
-
+                                                                        <script src ="Scripts/graficoDisco.js">
                                                                         </script>
                                                                     </div>
                                                                 </div>
@@ -233,28 +191,7 @@
                                                                         <!--Tag que sera manipulada por todo script para apresentação do grafico-->
                                                                         <canvas class="line" width="900" height="450"></canvas>
                                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
-                                                                        <script>
-                                                                            //Variavel javascript que faz referencia com a tag line-chart( para apresentação do grafico)
-                                                                            var ctx = document.getElementsByClassName("line");
-                                                                            // Variavel necessaria para criação do grafico
-                                                                            var LinhaGrafico = new Chart(ctx, {
-                                                                                // Colocar o tipo do grafico
-                                                                                type: 'line',
-                                                                                // Conteudos apresentados nestes graficos
-                                                                                data: {
-                                                                                    //legenda linha horizontal
-                                                                                    labels: ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"],
-                                                                                    datasets: [{
-                                                                                        //Legenda referente ao dado
-                                                                                        label: "Teste Grafico Dashboard",
-                                                                                        //Dados em relação ao conteudo acima
-                                                                                        data: [1, 5, 6, 9, 0, 0, 0, 0, 0, 1, 9],
-                                                                                        borderWidht: 3,
-                                                                                        borderColor: "rgba(15,259,989)",
-                                                                                        background: "transparent",
-                                                                                    }]
-                                                                                }
-                                                                            });
+                                                                        <script src="Scripts/graficoMemoria.js">
                                                                         </script>
                                                                     </div>
                                                                 </div>
