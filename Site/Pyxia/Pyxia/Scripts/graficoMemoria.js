@@ -19,3 +19,24 @@ var LinhaGrafico = new Chart(ctx, {
         }]
     }
 });
+setInterval(() => {
+    $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        url: 'PaginaAjax.aspx/getPorcentagemUsada',
+        dataType: 'json',
+        data: '{}',
+        success: function (data) {
+            LinhaGrafico2.data.datasets[0].data.push(data.d);
+            LinhaGrafico2.data.labels.push(new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds());
+            if (LinhaGrafico2.data.labels.length > 25) {
+                LinhaGrafico2.data.datasets[0].data.shift(0);
+                LinhaGrafico2.data.labels.shift();
+            }
+            LinhaGrafico2.update();
+        },
+        error: function (xhr, status, error) {
+            console.log('erro')
+        }
+    });
+}, 5000);

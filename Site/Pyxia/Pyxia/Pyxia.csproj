@@ -175,6 +175,7 @@
     <Content Include="img\img_avatar2.png" />
     <Content Include="css\logincss.css" />
     <Content Include="Login.aspx" />
+    <Content Include="PaginaAjax.aspx" />
     <Content Include="Projeto.aspx" />
     <Content Include="Pyxia.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaAjax.aspx.cs">
+      <DependentUpon>PaginaAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAjax.aspx.designer.cs">
+      <DependentUpon>PaginaAjax.aspx</DependentUpon>
     </Compile>
     <Compile Include="Projeto.aspx.cs">
       <DependentUpon>Projeto.aspx</DependentUpon>

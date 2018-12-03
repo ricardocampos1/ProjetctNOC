@@ -33,7 +33,7 @@ namespace Pyxia
                         }
                     }
                 }
-                ddlMachine.Items.Insert(0, new ListItem("--Selecione sua Maquina--", "0"));
+                ddlMachine.Items.Insert(0, new ListItem("Computadores", "0"));
             }
         }
     }

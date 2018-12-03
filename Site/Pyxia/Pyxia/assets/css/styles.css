@@ -1,6 +1,19 @@
 
 @import url('styles.css');
 
+.ddl-menu {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 15px 15px;
+    letter-spacing: 0;
+    font-weight: 400;
+    background: #343e50;
+    border: 0px;
+} 
+
 #verview-chart2 {
     height: 350px;
 }

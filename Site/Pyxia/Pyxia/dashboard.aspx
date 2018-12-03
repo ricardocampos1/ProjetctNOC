@@ -191,7 +191,7 @@
                                                                         <!--Tag que sera manipulada por todo script para apresentação do grafico-->
                                                                         <canvas class="line" width="900" height="450"></canvas>
                                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
-                                                                        <script src="Scripts/graficoMemoria.js">
+                                                                        <script src="">
                                                                         </script>
                                                                     </div>
                                                                 </div>
