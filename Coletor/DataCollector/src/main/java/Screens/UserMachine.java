@@ -5,6 +5,7 @@
  */
 package Screens;
 
+import DataBase.Historical;
 import DataBase.Machine;
 import DataBase.MachineHD;
 import DataBase.MachineRealTime;
@@ -152,6 +153,7 @@ public class UserMachine extends javax.swing.JFrame {
         }
         new MachineRealTime(machine.getId_machine());
         new MachineHD(machine.getId_machine());
+        new Historical(machine.getId_machine());
     }//GEN-LAST:event_btnStartMouseClicked
 
     private void btnMinimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinimizeMouseClicked
