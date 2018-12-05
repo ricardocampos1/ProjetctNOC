@@ -1,7 +1,7 @@
 ﻿//Variavel javascript que faz referencia com a tag line-chart( para apresentação do grafico)
-var ctx = document.getElementsByClassName("line-chart");
+var ctx = document.getElementsByClassName("line");
 // Variavel necessaria para criação do grafico
-var LinhaGrafico = new Chart(ctx, {
+var LinhaGrafico2 = new Chart(ctx, {
     // Colocar o tipo do grafico
     type: 'line',
     // Conteudos apresentados nestes graficos
@@ -23,20 +23,20 @@ setInterval(() => {
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: 'PaginaAjax.aspx/getUltimoProcessador',
+        url: 'PaginaAjax.aspx/getPorcentagemUsada',
         dataType: 'json',
         data: '{}',
         success: function (data) {
-            LinhaGrafico1.data.datasets[0].data.push(data.d);
-            LinhaGrafico1.data.labels.push(new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds());
-            if (LinhaGrafico1.data.labels.length > 25) {
-                LinhaGrafico1.data.datasets[0].data.shift(0);
-                LinhaGrafico1.data.labels.shift();
+            LinhaGrafico2.data.datasets[0].data.push(data.d);
+            LinhaGrafico2.data.labels.push(new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds());
+            if (LinhaGrafico2.data.labels.length > 25) {
+                LinhaGrafico2.data.datasets[0].data.shift(0);
+                LinhaGrafico2.data.labels.shift();
             }
-            LinhaGrafico1.update();
+            LinhaGrafico2.update();
         },
         error: function (xhr, status, error) {
-            console.log('tchau')
+            console.log('erro')
         }
     });
 }, 5000);

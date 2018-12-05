@@ -107,7 +107,8 @@
                                             <div class="card-body">
                                                 <div class="d-sm-flex justify-content-center align-items-center">
                                                     <div class="trd-history-tabs">
-                                                        <h5 style="padding-bottom: 5px; text-align: center">Windows X51 64 Bits</h5>
+                                                        <h5 style="padding-bottom: 5px; text-align: center">
+                                                            <asp:Label Text="" ID="lblNameSO" runat="server" /></h5>
                                                         <ul class="nav" role="tablist">
                                                             <li>
                                                                 <a class="active" data-toggle="tab" href="#processador" role="tab">Processador</a>
@@ -143,9 +144,9 @@
                                                                                 <div class="col-lg-12">
                                                                                     <h4>Processador</h4>
                                                                                     <ul>
-                                                                                        <li style="margin-top: 5px">Nome:Aaaaaaaaaaaaaaaaaa </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Fisico: 2 </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Lógicos: 4</li>
+                                                                                        <li style="margin-top: 5px">Nome: <asp:Label Text="" ID="lblNameProcessor" runat="server" /> </li>
+                                                                                        <li style="margin-top: 5px">Nucleos Fisico: <asp:Label Text="" ID="lblPhysicalCore" runat="server" /> </li>
+                                                                                        <li style="margin-top: 5px">Nucleos Lógicos: <asp:Label Text="" ID="lblLogicalCore" runat="server" /></li>
                                                                                         <li style="margin-top: 5px">Temperatura: 43 Cº </li>
                                                                                     </ul>
                                                                                 </div>
@@ -191,7 +192,7 @@
                                                                         <!--Tag que sera manipulada por todo script para apresentação do grafico-->
                                                                         <canvas class="line" width="900" height="450"></canvas>
                                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
-                                                                        <script src="">
+                                                                        <script src="Scripts/graficoMemoria.js">
                                                                         </script>
                                                                     </div>
                                                                 </div>

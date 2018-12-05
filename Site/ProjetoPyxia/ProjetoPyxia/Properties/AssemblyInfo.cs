@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // As Informações Gerais sobre um assembly são controladas por meio do 
 // conjunto de atributos a seguir. Altere esses valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("Pyxia")]
+[assembly: AssemblyTitle("ProjetoPyxia")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Pyxia")]
+[assembly: AssemblyProduct("ProjetoPyxia")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,14 +20,14 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // A GUID a seguir será referente à ID do typelib se este projeto for exposto ao COM
-[assembly: Guid("83701c50-d68f-4bfe-bab7-a8005798679a")]
+[assembly: Guid("ea728ae7-4ada-4970-8a68-0e445b14bd18")]
 
 // As informações de versão de um assembly consistem nos quatro valores a seguir:
 //
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
+//      Versão Principal
+//      Versão Secundária 
+//      Número da Versão
+//      Revisão
 //
 // É possível especificar todos os valores ou utilizar como padrão os Números de Revisão e da Versão 
 // usando o '*' como mostrado abaixo:
