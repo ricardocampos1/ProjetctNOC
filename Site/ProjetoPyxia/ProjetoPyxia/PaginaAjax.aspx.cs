@@ -17,7 +17,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 processor_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 2", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 processor_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 1", con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -36,7 +36,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_total FROM tb_machine WHERE ID_MACHINE = 2", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_total FROM tb_machine WHERE ID_MACHINE = 1", con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -58,7 +58,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 2", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 1", con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {

@@ -9,7 +9,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Teste</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/png" href="/assets/images/icon/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/assets/css/themify-icons.css" />
@@ -46,17 +45,16 @@
                             <ul class="metismenu" id="menu">
                                 <li>
                                     <a href="invoice.html" aria-expanded="true"><i class="ti-user"></i>
-                                        <span>Perfil</span></a>
+                                        <span style="margin-left:2.6rem">Perfil</span></a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-desktop"></i><span>Computadores</span></a>
-                                    <asp:DropDownList ID="ddlMachine" runat="server" AppendDataBoundItems="true">
-                                    </asp:DropDownList>
-                             
+                                <li class="ddl-li">
+                                   <div style="padding:2vh; margin-left:1rem"><i class="ti-desktop"></i></div>
+                                    <asp:DropDownList ID="ddlMachine" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu">
+                                    </asp:DropDownList>                           
                                 </li>
-                                <li>
+                                <li style="margin-top: 23rem">
                                     <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
-                                        <span>Sair</span></a>
+                                        <span style="margin-left:2.6rem">Sair</span></a>
                                 </li>
                             </ul>
                         </nav>
@@ -88,7 +86,7 @@
                             <div class="user-profile pull-right">
                                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown">
                                     <% string usuario = (string)Session["name_user"];
-                                        Response.Write("Bem Vindo: " + usuario); %>
+                                        Response.Write("Olá, " + usuario); %>
                                 </h4>
                             </div>
                         </div>
@@ -98,18 +96,14 @@
 
                 <!-- Classes responsaveis para resposividade do site e inicialização do processo de formação do grafico-->
                 <div class="row">
-                    <div class="col-xl-9 col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="col-lg-8 mt-sm-30 mt-xs-30">
+                                    <div class="col-xl-9 col-lg-8 mt-sm-30 mt-xs-30">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="d-sm-flex justify-content-center align-items-center">
-                                                    <div class="trd-history-tabs">
+                                                    <div class="trd-history-tabs ">
                                                         <h5 style="padding-bottom: 5px; text-align: center">
                                                             <asp:Label Text="" ID="lblNameSO" runat="server" /></h5>
-                                                        <ul class="nav" role="tablist">
+                                                        <ul class="nav justify-content-center" role="tablist">
                                                             <li>
                                                                 <a class="active" data-toggle="tab" href="#processador" role="tab">Processador</a>
                                                             </li>
@@ -136,12 +130,9 @@
                                                                         <script src ="Scripts/graficoProcessador.js">                                                                            
                                                                         </script>
                                                                     </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-xl-9 col-lg-8">
+                                                                </div>          
                                                                         <div class="card">
-                                                                            <div class="col-12">
-                                                                                <div class="col-lg-12">
+                                                                            <div class="col-xl-9 col-lg-8">
                                                                                     <h4>Processador</h4>
                                                                                     <ul>
                                                                                         <li style="margin-top: 5px">Nome: <asp:Label Text="" ID="lblNameProcessor" runat="server" /> </li>
@@ -149,11 +140,8 @@
                                                                                         <li style="margin-top: 5px">Nucleos Lógicos: <asp:Label Text="" ID="lblLogicalCore" runat="server" /></li>
                                                                                         <li style="margin-top: 5px">Temperatura: 43 Cº </li>
                                                                                     </ul>
-                                                                                </div>
-                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
+                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="tab-pane fade" id="hard_disk" role="tabpanel">
@@ -166,11 +154,9 @@
                                                                         </script>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-xl-9 col-lg-8">
+                                                              
                                                                         <div class="card">
-                                                                            <div class="col-12">
-                                                                                <div class="col-lg-12">
+                                                                              <div class="col-xl-9 col-lg-8">
                                                                                     <h4>Disco Rigido</h4>
                                                                                     <ul>
                                                                                         <li style="margin-top: 5px">Nome:Aaaaaaaaaaaaaaaaaa </li>
@@ -178,13 +164,10 @@
                                                                                         <li style="margin-top: 5px">Nucleos Lógicos: 4</li>
                                                                                         <li style="margin-top: 5px">Temperatura: 43 Cº </li>
                                                                                     </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                                                 </div>
+                                                                            </div>        
+                                                                         </div>
+                                                                     </div>
                                                         <div class="tab-pane fade" id="memoria_ram" role="tabpanel">
                                                             <div class="d-sm-flex justify-content-between ">
                                                                 <div class="col-lg-7 col-xs-12">
@@ -196,11 +179,9 @@
                                                                         </script>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-xl-9 col-lg-8">
+                                                                
                                                                         <div class="card">
-                                                                            <div class="col-12">
-                                                                                <div class="col-lg-12">
+                                                                             <div class="col-xl-9 col-lg-8">
                                                                                     <h4>Memória RAM</h4>
                                                                                     <ul>
                                                                                         <li style="margin-top: 5px">Nome:Aaaaaaaaaaaaaaaaaa </li>
@@ -208,87 +189,18 @@
                                                                                         <li style="margin-top: 5px">Nucleos Lógicos: 4</li>
                                                                                         <li style="margin-top: 5px">Temperatura: 43 Cº </li>
                                                                                     </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                               </div>
                                                                     </div>
-                                                                </div>
+                                                               </div>
                                                             </div>
-                                                        </div>
+                                                       </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!--Gerenciador de Tarefas -->
-                    <!--     <div class="row">
-                    <div class="col-lg-8 mt-sm-30 mt-xs-30">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-center">
-                                    <h4 class="header-title">Lista</h4>
-                                    <div class="trd-history-tabs">
-                                        <ul class="nav" role="tablist">
-                                            <li>
-                                                <a class="active" data-toggle="tab" href="#ger_tarefas" role="tab">Gerenciador de Tarefas</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                   
-                                </div>
-                                <!--Conteudo que a dentro desta tabela -->
-                    <!--     <div class="trad-history mt-4">
-                                    <div class="tab-content" id="MyTabContentt">
-                                        <div class="tab-pane fade show active" id="ger_tarefas" role="tabpanel">
-                                            <div class="table-responsive">
-                                                <table class="dbkit-table">
-                                                    <tr class="heading-td">
-                                                            <td>PID</td>
-                                                            <td>Tarefa</td>
-                                                            <td>Consumo Processador</td>
-                                                            <td>Memória Consumida</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>51000</td>
-                                                            <td>Chrome</td>
-                                                            <td>59%</td>
-                                                            <td>47%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>51001</td>
-                                                            <td>Visual Studio</td>
-                                                            <td>21%</td>
-                                                            <td>23%</td>
-                                                        </tr>
-                                                       <tr>
-                                                            <td>51002</td>
-                                                            <td>NodeJs</td>
-                                                            <td>17%</td>
-                                                            <td>21%</td>
-                                                        </tr>
-                                                       <tr>
-                                                            <td>51003</td>
-                                                            <td>NotePad</td>
-                                                            <td>3%</td>
-                                                            <td>9%</td>
-                                                        </tr>
-                                                       
-                                                </table>
-                                            </div>
-                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                </div>
-            </div>
-        </div>
+                          </div>
         <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
         <!-- bootstrap 4 js -->
         <script src="/assets/js/popper.min.js"></script>

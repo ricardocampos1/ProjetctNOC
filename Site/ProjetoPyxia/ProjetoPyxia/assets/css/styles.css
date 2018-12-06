@@ -7,18 +7,45 @@
     color: #fff;
     font-size: 15px;
     text-transform: capitalize;
-    padding: 15px 15px;
+    padding: 15px 13px;
     letter-spacing: 0;
     font-weight: 400;
-    background: #343e50;
     border: 0px;
-} 
+    background: #040319;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
 
+.ddl-li {
+    display: flex;
+    color: #6a56a5;
+    cursor: pointer;
+}
+ .ddl-li:hover .ti-desktop {
+        color: #fff;
+    }
+
+.ti-desktop:hover {
+    color: #fff;
+}
+
+.ddl-li:hover {
+    background: #343942;
+}
+
+    .ddl-li:hover .ddl-menu {
+        background: #343942;
+    }
+
+.ddl-menu:hover {
+    background: #343942;
+}
+    
 #verview-chart2 {
-    height: 350px;
+    height: 395px;
 }
 #verview-xhart{
-    height:350px;
+    height: 395px;
 }
 .grafico {
     width: 10px;
@@ -54,6 +81,7 @@
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     margin-top: 2rem;
+    margin-left: 0.7rem;
 }
 
 .card:hover {
@@ -62,7 +90,7 @@
 
 .card-body {
     padding: 25.6px;
-    padding: 1.6rem;
+    padding: 3rem;
 }
 
 .h-full {
@@ -667,7 +695,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #11a08b;
+    color: #9600ed;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -675,7 +703,7 @@ ul.breadcrumbs {
 
 .breadcrumbs li a:before {
     content: '/';
-    color: #11a08b;
+    color: #9600ed;
     position: absolute;
     right: -13px;
     top: 0;
@@ -697,8 +725,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #fff 0%, #11a08b 100%);
-    background: linear-gradient(to right, #fff 0%, #11a08b 100%);
+    background: -webkit-linear-gradient(left, #fff 0%, #9600ed 100%);
+    background: linear-gradient(to right, #fff 0%, #9600ed 100%);
     padding: 17px 38px;
     position: relative;
 }
@@ -872,7 +900,7 @@ ul.breadcrumbs {
 }
 
 #verview-shart {
-    height: 350px;
+    height: 395px;
 }
 
 #verview-shart-license-text,
