@@ -48,7 +48,7 @@
                                         <span style="margin-left:2.6rem">Perfil</span></a>
                                 </li>
                                 <li class="ddl-li">
-                                   <div style="padding:4vh"><i class="ti-desktop"></i></div>
+                                   <div style="padding:2vh; margin-left:1rem"><i class="ti-desktop"></i></div>
                                     <asp:DropDownList ID="ddlMachine" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu">
                                     </asp:DropDownList>                           
                                 </li>
