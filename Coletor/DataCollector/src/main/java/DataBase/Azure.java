@@ -1,5 +1,9 @@
 package DataBase;
 
+import Screens.Login;
+import DataBase.Machine;
+import SlackIntegration.Message;
+import static Screens.Login.ID_USER;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,6 +14,7 @@ public class Azure {
 
     private final String connectionSQL = "jdbc:sqlserver://pyxia.database.windows.net:1433;database=Pyxia;user=pyxia@pyxia;password=Admin@admin;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
     private String commandSQL;
+    Message mensagem = new Message();
 
     public int executeQuery(String typeStatement) {
         int resultRow = 0;
@@ -41,6 +46,7 @@ public class Azure {
             conn.close();
         } catch (SQLException e) {
              System.out.println("Conexão não estabelecida\n" + e.getErrorCode());
+             mensagem.sendMessage(Azure.class.getName() + " | usuário " + ID_USER + " | conexão não estabelecida");
         }
         System.out.println("Comando realizado com sucesso");
         return resultRow;

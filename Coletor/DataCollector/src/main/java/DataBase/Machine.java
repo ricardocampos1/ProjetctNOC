@@ -6,6 +6,7 @@ import Handlers.RamMemory;
 import Handlers.SystemOperation;
 import Screens.Login;
 import static Screens.Login.ID_USER;
+import SlackIntegration.Message;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -13,6 +14,7 @@ import java.util.logging.Level;
 public class Machine {
 
     private int id_machine;
+    Message mensagem = new Message();
 
     public int getId_machine() {
         return id_machine;
@@ -56,6 +58,7 @@ public class Machine {
         } catch (Exception e) {
             System.out.println("Erro!!!");
             // Erro de conexão ao inserir a maquina
+            mensagem.sendMessage(Machine.class.getName() + " | usuário " + ID_USER + "| erro na conexão ao inserir maquina");
             Logger logger= new Logger();
             try {
                 logger.LogTxt("Erro de conexão ao tentar inserir a maquina do usuário"+ID_USER);
