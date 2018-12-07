@@ -44,8 +44,7 @@ namespace Pyxia
 
                     long valor1 = long.Parse(rd[0].ToString());
                     return Convert.ToInt64(valor1);
-
-
+                    
                 }
 
                 return 0;
