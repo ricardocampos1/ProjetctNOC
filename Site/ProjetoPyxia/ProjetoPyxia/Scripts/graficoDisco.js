@@ -1,20 +1,12 @@
-﻿new Chart(document.getElementById("bar-chart"), {
-    type: 'bar',
+﻿new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
     data: {
-        labels: [],
-        datasets: [
-            {
-                label: "Porcentagem de uso do HD",
-                backgroundColor: ["#3e95cd"],
-                data: []
-            }
-        ]
-    },
-    options: {
-        legend: { display: false },
-        title: {
-            display: true,
-            text: 'Desempenho processador'
-        }
+        labels: ["Espaço disponivel", "Espaço em uso"],
+        datasets: [{
+            label: "Informações do HD",
+            backgroundColor: ["#3e95cd", "#8e5ea2"],
+            data: {}
+        }]
     }
 });
+

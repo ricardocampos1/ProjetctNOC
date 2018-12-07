@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 using System.Web.UI.WebControls;
 
 namespace Pyxia
@@ -8,14 +9,10 @@ namespace Pyxia
     public partial class dashboard1 : System.Web.UI.Page
     {
         private const decimal convertGiga = 1073741824;
-        private readonly SqlConnection conexao2 = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        private readonly string conexao2 = "Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetLabelProcessador();
-            SetLabelNomeSO();
-            SetLabelMemoriaTotal();
-
             if (!this.IsPostBack)
             {
                 using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -37,6 +34,10 @@ namespace Pyxia
                 }
                 ddlMachine.Items.Insert(0, new ListItem("Computadores", "0"));
             }
+            HttpContext.Current.Session["id_machine"] = 0;
+            SetLabelProcessador();
+            SetLabelNomeSO();
+            SetLabelMemoriaTotal();
         }
 
         private void SetLabelProcessador()
@@ -44,7 +45,7 @@ namespace Pyxia
             using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("select name_processor, physical_core, logical_core from tb_machine where id_machine = 1", conn))
+                using (SqlCommand cmd = new SqlCommand("select name_processor, physical_core, logical_core from tb_machine where id_machine = " + HttpContext.Current.Session["id_machine"].ToString() + "", conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -67,7 +68,7 @@ namespace Pyxia
             using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("select ram_memory_total from tb_machine where id_machine = 1", conn))
+                using (SqlCommand cmd = new SqlCommand("select ram_memory_total from tb_machine where id_machine = " + HttpContext.Current.Session["id_machine"].ToString() + "", conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -77,7 +78,7 @@ namespace Pyxia
                             valorTotal = valorTotal / convertGiga;
                             valorTotal = Math.Round(valorTotal, 2);
                             lblMemoriaTotal.Text = valorTotal.ToString();
-                            
+
                         }
                         else
                         {
@@ -92,11 +93,11 @@ namespace Pyxia
         private void SetLabelNomeSO()
         {
 
-            using (conexao2)
+            using (SqlConnection conn = new SqlConnection(conexao2))
             {
-                conexao2.Open();
+                conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("select name_operation_system from tb_machine where id_machine = 1", conexao2))
+                using (SqlCommand cmd = new SqlCommand("select name_operation_system from tb_machine where id_machine = " + HttpContext.Current.Session["id_machine"].ToString(), conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -109,6 +110,14 @@ namespace Pyxia
 
             }
 
+        }
+
+        public void ddlMachine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session["id_machine"] = ddlMachine.SelectedValue.ToString();
+            SetLabelProcessador();
+            SetLabelNomeSO();
+            SetLabelMemoriaTotal();
         }
     }
 }

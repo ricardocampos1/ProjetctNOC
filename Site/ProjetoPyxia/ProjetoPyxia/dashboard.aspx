@@ -17,7 +17,7 @@
     <!-- others css -->
     <link rel="stylesheet" href="/assets/css/typography.css" />
     <link rel="stylesheet" href="/assets/css/default-css.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -47,16 +47,16 @@
                             <ul class="metismenu" id="menu">
                                 <li>
                                     <a href="invoice.html" aria-expanded="true"><i class="ti-user"></i>
-                                        <span style="margin-left:2.6rem">Perfil</span></a>
+                                        <span style="margin-left: 2.6rem">Perfil</span></a>
                                 </li>
                                 <li class="ddl-li">
-                                   <div style="padding:2vh; margin-left:1rem"><i class="ti-desktop"></i></div>
-                                    <asp:DropDownList ID="ddlMachine" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu">
-                                    </asp:DropDownList>                           
+                                    <div style="padding: 2vh; margin-left: 1rem"><i class="ti-desktop"></i></div>
+                                    <asp:DropDownList ID="ddlMachine" AutoPostBack="true" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu" OnSelectedIndexChanged="ddlMachine_SelectedIndexChanged">
+                                    </asp:DropDownList>
                                 </li>
                                 <li style="margin-top: 23rem">
                                     <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
-                                        <span style="margin-left:2.6rem">Sair</span></a>
+                                        <span style="margin-left: 2.6rem">Sair</span></a>
                                 </li>
                             </ul>
                         </nav>
@@ -98,111 +98,123 @@
 
                 <!-- Classes responsaveis para resposividade do site e inicialização do processo de formação do grafico-->
                 <div class="row">
-                                    <div class="col-xl-9 col-lg-8 mt-sm-30 mt-xs-30">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="d-sm-flex justify-content-center align-items-center">
-                                                    <div class="trd-history-tabs ">
-                                                        <h5 style="padding-bottom: 5px; text-align: center">
-                                                            <asp:Label Text="" ID="lblNameSO" runat="server" /></h5>
-                                                        <ul class="nav justify-content-center" role="tablist">
-                                                            <li>
-                                                                <a class="active" data-toggle="tab" href="#processador" role="tab">Processador</a>
+                    <div class="col-xl-9 col-lg-8 mt-sm-30 mt-xs-30">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-sm-flex justify-content-center align-items-center">
+                                    <div class="trd-history-tabs ">
+                                        <h5 style="padding-bottom: 5px; text-align: center">
+                                            <asp:Label Text="" ID="lblNameSO" runat="server" /></h5>
+                                        <ul class="nav justify-content-center" role="tablist">
+                                            <li>
+                                                <a class="active" data-toggle="tab" href="#processador" role="tab">Processador</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#hard_disk" role="tab">Disco Rigido</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#memoria_ram" role="tab">Memória RAM</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="trad-history mt-lg-3">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="processador" role="tabpanel">
+                                            <div class="d-sm-flex justify-content-between ">
+                                                <div class="col-lg-7 col-xs-12">
+                                                    <div id="verview-shart">
+                                                        <!--Tag que sera manipulada por todo script para apresentação do grafico-->
+                                                        <canvas class="line-chart" width="900" height="450"></canvas>
+                                                        <!--Biblioteca do Chart.js para apresentação do grafico -->
+                                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                                                        <script src="Scripts/graficoProcessador.js">                                                                            
+                                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="col-xl-9 col-lg-8">
+                                                        <h4>Processador</h4>
+                                                        <ul>
+                                                            <li style="margin-top: 5px">Nome:
+                                                                <asp:Label Text="" ID="lblNameProcessor" runat="server" />
                                                             </li>
-                                                            <li>
-                                                                <a data-toggle="tab" href="#hard_disk" role="tab">Disco Rigido</a>
+                                                            <li style="margin-top: 5px">Nucleos Fisico:
+                                                                <asp:Label Text="" ID="lblPhysicalCore" runat="server" />
                                                             </li>
-                                                            <li>
-                                                                <a data-toggle="tab" href="#memoria_ram" role="tab">Memória RAM</a>
-                                                            </li>
+                                                            <li style="margin-top: 5px">Nucleos Lógicos:
+                                                                <asp:Label Text="" ID="lblLogicalCore" runat="server" /></li>
+                                                            <li style="margin-top: 5px">Temperatura: 43 Cº </li>
                                                         </ul>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="hard_disk" role="tabpanel">
+                                            <div class="d-sm-flex justify-content-between ">
+                                                <div class="col-lg-7 col-xs-12">
+                                                    <!-- col-xs-(1-12) col-sm col-md col-lg -->
+                                                    <div id="verview-chart2">
+                                                        <canvas class="grafico" id="pie-chart" width="900" height="450"></canvas>
+                                                        <script src="Scripts/graficoDisco.js"></script>
 
-                                                <div class="trad-history mt-lg-3">
-                                                    <div class="tab-content" id="myTabContent">
-                                                        <div class="tab-pane fade show active" id="processador" role="tabpanel">
-                                                            <div class="d-sm-flex justify-content-between ">
-                                                                <div class="col-lg-7 col-xs-12">
-                                                                    <div id="verview-shart">
-                                                                        <!--Tag que sera manipulada por todo script para apresentação do grafico-->
-                                                                        <canvas class="line-chart" width="900" height="450"></canvas>
-                                                                        <!--Biblioteca do Chart.js para apresentação do grafico -->
-                                                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                                                        <script src ="Scripts/graficoProcessador.js">                                                                            
-                                                                        </script>
-                                                                    </div>
-                                                                </div>          
-                                                                        <div class="card">
-                                                                            <div class="col-xl-9 col-lg-8">
-                                                                                    <h4>Processador</h4>
-                                                                                    <ul>
-                                                                                        <li style="margin-top: 5px">Nome: <asp:Label Text="" ID="lblNameProcessor" runat="server" /> </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Fisico: <asp:Label Text="" ID="lblPhysicalCore" runat="server" /> </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Lógicos: <asp:Label Text="" ID="lblLogicalCore" runat="server" /></li>
-                                                                                        <li style="margin-top: 5px">Temperatura: 43 Cº </li>
-                                                                                    </ul>
-                                                                        </div>
-                                                                 </div>
-                                                            </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="hard_disk" role="tabpanel">
-                                                            <div class="d-sm-flex justify-content-between ">
-                                                                <div class="col-lg-7 col-xs-12">
-                                                                    <!-- col-xs-(1-12) col-sm col-md col-lg -->
-                                                                    <div id="verview-chart2">
-                                                                        <canvas class="grafico" id="bar-chart" width="900" height="450"></canvas>
-                                                                        <script src ="Scripts/graficoDisco.js">
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="col-xl-9 col-lg-8">
+                                                        <h4>Disco Rigido</h4>
+                                                        <ul>
+                                                            <li style="margin-top: 5px">Nome: Disco C:\ </li>
+                                                            <!-- dropdownlist -->
+                                                            <li style="margin-top: 5px">Total: 500gb </li>
+                                                            <li style="margin-top: 5px">Espaço Usado: 300gb</li>
+                                                            <li style="margin-top: 5px">Espaço Livre: 200gb</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                        </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="memoria_ram" role="tabpanel">
+                                            <div class="d-sm-flex justify-content-between ">
+                                                <div class="col-lg-7 col-xs-12">
+                                                    <div id="verview-xhart">
+                                                        <!--Tag que sera manipulada por todo script para apresentação do grafico-->
+                                                        <canvas class="line" width="900" height="450"></canvas>
+                                                        <!--Biblioteca do Chart.js para apresentação do grafico -->
+                                                        <script src="Scripts/graficoMemoria.js">
                                                                         </script>
-                                                                    </div>
-                                                                </div>
-                                                              
-                                                                        <div class="card">
-                                                                              <div class="col-xl-9 col-lg-8">
-                                                                                    <h4>Disco Rigido</h4>
-                                                                                    <ul>
-                                                                                        <li style="margin-top: 5px">Nome:Aaaaaaaaaaaaaaaaaa </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Fisico: 2 </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Lógicos: 4</li>
-                                                                                        <li style="margin-top: 5px">Temperatura: 43 Cº </li>
-                                                                                    </ul>
-                                                                                 </div>
-                                                                            </div>        
-                                                                         </div>
-                                                                     </div>
-                                                        <div class="tab-pane fade" id="memoria_ram" role="tabpanel">
-                                                            <div class="d-sm-flex justify-content-between ">
-                                                                <div class="col-lg-7 col-xs-12">
-                                                                    <div id="verview-xhart">
-                                                                        <!--Tag que sera manipulada por todo script para apresentação do grafico-->
-                                                                        <canvas class="line" width="900" height="450"></canvas>
-                                                                        <!--Biblioteca do Chart.js para apresentação do grafico -->
-                                                                        <script src="Scripts/graficoMemoria.js">
-                                                                        </script>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                        <div class="card">
-                                                                             <div class="col-xl-9 col-lg-8">
-                                                                                    <h4>Memória RAM</h4>
-                                                                                    <ul>
-                                                                                        <li style="margin-top: 5px">Total de memoria: <asp:Label Text="" ID="lblMemoriaTotal" runat="server" /> </li>
-                                                                                        <li style="margin-top: 5px">Ram usada: <asp:Label Text="" ID="RamUsada" runat="server" /> </li>
-                                                                                        <li style="margin-top: 5px">Ram livre: <asp:Label Text="" ID="RamLivre" runat="server" /></li>
-                                                                                        <li style="margin-top: 5px"></li>
-                                                                                    </ul>
-                                                                               </div>
-                                                                    </div>
-                                                               </div>
-                                                            </div>
-                                                       </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="col-xl-9 col-lg-8">
+                                                        <h4>Memória RAM</h4>
+                                                        <ul>
+                                                            <li style="margin-top: 5px">Total de memoria:
+                                                                    <asp:Label Text="" ID="lblMemoriaTotal" runat="server" />
+                                                            </li>
+                                                            <li style="margin-top: 5px">Ram usada:
+                                                                    <asp:Label Text="" ID="RamUsada" runat="server" />
+                                                            </li>
+                                                            <li style="margin-top: 5px">Ram livre:
+                                                                    <asp:Label Text="" ID="RamLivre" runat="server" /></li>
+                                                            <li style="margin-top: 5px"></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
         <!-- bootstrap 4 js -->
         <script src="/assets/js/popper.min.js"></script>

@@ -18,7 +18,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 processor_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 1", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 processor_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString(), con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -26,9 +26,7 @@ namespace Pyxia
 
                 }
             }
-
             return 0;
-            //return new Random().Next(0, 100);
         }
 
         [WebMethod]
@@ -37,14 +35,14 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_total FROM tb_machine WHERE ID_MACHINE = 1", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_total FROM tb_machine WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString(), con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
 
                     long valor1 = long.Parse(rd[0].ToString());
                     return Convert.ToInt64(valor1);
-                    
+
                 }
 
                 return 0;
@@ -58,7 +56,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 1", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString(), con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -77,7 +75,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = 1", con);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 ram_memory_usage FROM TB_REAL_TIME_MACHINE WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString(), con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -97,7 +95,7 @@ namespace Pyxia
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select top 1 ram_memory_available from tb_real_time_machine where id_machine = 1", con);
+                SqlCommand cmd = new SqlCommand("select top 1 ram_memory_available from tb_real_time_machine where id_machine = " + HttpContext.Current.Session["id_machine"].ToString(), con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -113,7 +111,11 @@ namespace Pyxia
         [WebMethod]
         public static long getPorcentagemUsada()
         {
-            return long.Parse(((getMemoriaUsada() * 100) / getMemoriaTotal()).ToString());
+            if (getMemoriaUsada() != 0)
+            {
+                return long.Parse(((getMemoriaUsada() * 100) / getMemoriaTotal()).ToString());
+            }
+            return 0;
         }
 
         [WebMethod]
