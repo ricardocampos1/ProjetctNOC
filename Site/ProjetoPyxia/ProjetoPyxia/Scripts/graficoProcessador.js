@@ -10,7 +10,7 @@ var LinhaGrafico1 = new Chart(ctx, {
         labels: [],
         datasets: [{
             //Legenda referente ao dado
-            label: "Teste Grafico Dashboard",
+            label: "Uso em porcentagem x Horario",
             //Dados em relação ao conteudo acima
             data: [],
             borderWidht: 3,

@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="Scripts/labelMemoriaRam.js"> </script>
+    <script src="Scripts/labelMemoryRamLivre.js"></script>
 </head>
 <body class="">
     <form runat="server">
@@ -184,10 +186,10 @@
                                                                              <div class="col-xl-9 col-lg-8">
                                                                                     <h4>Memória RAM</h4>
                                                                                     <ul>
-                                                                                        <li style="margin-top: 5px">Nome:Aaaaaaaaaaaaaaaaaa </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Fisico: 2 </li>
-                                                                                        <li style="margin-top: 5px">Nucleos Lógicos: 4</li>
-                                                                                        <li style="margin-top: 5px">Temperatura: 43 Cº </li>
+                                                                                        <li style="margin-top: 5px">Total de memoria: <asp:Label Text="" ID="lblMemoriaTotal" runat="server" /> </li>
+                                                                                        <li style="margin-top: 5px">Ram usada: <asp:Label Text="" ID="RamUsada" runat="server" /> </li>
+                                                                                        <li style="margin-top: 5px">Ram livre: <asp:Label Text="" ID="RamLivre" runat="server" /></li>
+                                                                                        <li style="margin-top: 5px"></li>
                                                                                     </ul>
                                                                                </div>
                                                                     </div>
