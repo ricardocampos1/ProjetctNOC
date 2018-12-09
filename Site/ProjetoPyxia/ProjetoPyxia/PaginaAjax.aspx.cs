@@ -30,6 +30,46 @@ namespace Pyxia
         }
 
         [WebMethod]
+        public static decimal getHardDiskLivre()
+        {
+
+            using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT total_free_space_hd FROM tb_hard_disk WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString() + " and id_hd = " + HttpContext.Current.Session["id_hd"].ToString(), con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    var result = decimal.Parse(rd[0].ToString());
+                    result = result / convertGiga;
+                    return result;
+
+                }
+            }
+            return 0;
+        }
+
+        [WebMethod]
+        public static decimal getHardDiskUsado()
+        {
+
+            using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 total_usable_space_hd FROM tb_hard_disk WHERE ID_MACHINE = " + HttpContext.Current.Session["id_machine"].ToString() + " and id_hd = " + HttpContext.Current.Session["id_hd"].ToString(), con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    var result = decimal.Parse(rd[0].ToString());
+                    result = result / convertGiga;
+                    return result;
+
+                }
+            }
+            return 0;
+        }
+
+        [WebMethod]
         public static long getMemoriaTotal()
         {
             using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
@@ -109,6 +149,25 @@ namespace Pyxia
         }
 
         [WebMethod]
+        public static decimal getTemperatura()
+        {
+
+            using (SqlConnection con = new SqlConnection("Server = tcp:pyxia.database.windows.net,1433; Initial Catalog = Pyxia; Persist Security Info = False; User ID =pyxia; Password =Admin@admin; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top 1 processor_temperature from tb_real_time_machine where id_machine = " + HttpContext.Current.Session["id_machine"].ToString(), con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    var result = decimal.Parse(rd[0].ToString());
+                    return result;
+
+                }
+            }
+            return 0;
+        }
+
+        [WebMethod]
         public static long getPorcentagemUsada()
         {
             if (getMemoriaUsada() != 0)
@@ -122,6 +181,18 @@ namespace Pyxia
         public static string getTotalRamUsada()
         {
             return Math.Round(getMemoriaUsadaLabel(), 2).ToString();
+        }
+
+        [WebMethod]
+        public static string getHardDiskLivreGrafico()
+        {
+            return Math.Round(getHardDiskLivre(), 2).ToString();
+        }
+
+        [WebMethod]
+        public static string getHardDiskUsadoGrafico()
+        {
+            return Math.Round(getHardDiskUsado(), 2).ToString();
         }
 
         [WebMethod]

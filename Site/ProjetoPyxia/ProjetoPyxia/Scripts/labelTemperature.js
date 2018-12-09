@@ -2,11 +2,12 @@
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        url: 'PaginaAjax.aspx/getTotalRamLivre',
+        url: 'PaginaAjax.aspx/getTemperatura',
         dataType: 'json',
         data: '{}',
         success: function (response) {
-            document.getElementById("RamLivre").innerHTML = response.d + " GB";
+            console.log("temperatura: " + response.d);
+            document.getElementById("lblTemperatura").innerHTML = response.d + " Cº";
         },
         error: function (xhr, status, error) {
             alert(error);

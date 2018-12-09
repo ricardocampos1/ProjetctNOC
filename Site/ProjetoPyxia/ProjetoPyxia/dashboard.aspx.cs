@@ -33,8 +33,11 @@ namespace Pyxia
                     }
                 }
                 ddlMachine.Items.Insert(0, new ListItem("Computadores", "0"));
+
+                HttpContext.Current.Session["id_machine"] = 0;
+                HttpContext.Current.Session["id_hd"] = 0;
             }
-            HttpContext.Current.Session["id_machine"] = 0;
+
             SetLabelProcessador();
             SetLabelNomeSO();
             SetLabelMemoriaTotal();
@@ -90,6 +93,34 @@ namespace Pyxia
 
         }
 
+        private void SetLabelHardDisk()
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("select total_space_hd, total_free_space_hd, total_usable_space_hd from tb_hard_disk where id_machine = " + HttpContext.Current.Session["id_machine"].ToString() + " and id_hd = " + HttpContext.Current.Session["id_hd"].ToString() + "", conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read() == true)
+                        {
+                            lblTotalSpace.Text = Math.Round((reader.GetInt64(0) / convertGiga), 2).ToString();
+                            lblFreeSpace.Text = Math.Round((reader.GetInt64(1) / convertGiga), 2).ToString();
+                            lblUsageSpace.Text = Math.Round((reader.GetInt64(2) / convertGiga), 2).ToString();
+                        }
+                        else
+                        {
+                            lblTotalSpace.Text = "não disponivel";
+                            lblFreeSpace.Text = "não disponivel";
+                            lblUsageSpace.Text = "não disponivel";
+                        }
+                    }
+                }
+            }
+
+        }
+
         private void SetLabelNomeSO()
         {
 
@@ -118,6 +149,30 @@ namespace Pyxia
             SetLabelProcessador();
             SetLabelNomeSO();
             SetLabelMemoriaTotal();
+            using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT id_hd, absolut_path FROM tb_hard_disk where id_machine = " + HttpContext.Current.Session["id_machine"].ToString()))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataSet ds = new DataSet();
+                        sda.Fill(ds);
+                        ddlHardDisk.DataSource = ds.Tables[0];
+                        ddlHardDisk.DataTextField = "absolut_path";
+                        ddlHardDisk.DataValueField = "id_hd";
+                        ddlHardDisk.DataBind();
+                    }
+                }
+            }
+            ddlHardDisk.Items.Insert(0, new ListItem("Lista de HDs", "0"));
+        }
+
+        protected void ddlHardDisk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session["id_hd"] = ddlHardDisk.SelectedValue.ToString();
+            SetLabelHardDisk();
         }
     }
 }

@@ -23,6 +23,7 @@
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="Scripts/labelMemoriaRam.js"> </script>
     <script src="Scripts/labelMemoryRamLivre.js"></script>
+    <script src="Scripts/labelTemperature.js"></script>
 </head>
 <body class="">
     <form runat="server">
@@ -145,7 +146,8 @@
                                                             </li>
                                                             <li style="margin-top: 5px">Nucleos Lógicos:
                                                                 <asp:Label Text="" ID="lblLogicalCore" runat="server" /></li>
-                                                            <li style="margin-top: 5px">Temperatura: 43 Cº </li>
+                                                            <li style="margin-top: 5px">Temperatura : 
+                                                                <asp:Label Text="" ID="lblTemperatura" runat="server" /></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -159,22 +161,28 @@
                                                         <canvas class="grafico" id="pie-chart" width="900" height="450"></canvas>
                                                         <script src="Scripts/graficoDisco.js"></script>
 
-                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="card">
                                                     <div class="col-xl-9 col-lg-8">
                                                         <h4>Disco Rigido</h4>
                                                         <ul>
-                                                            <li style="margin-top: 5px">Nome: Disco C:\ </li>
+                                                            <li style="margin-top: 5px">Nome:
+                                                                <asp:DropDownList runat="server" ID="ddlHardDisk" AutoPostBack="true" AppendDataBoundItems="true" OnSelectedIndexChanged="ddlHardDisk_SelectedIndexChanged">
+                                                                </asp:DropDownList>
+                                                            </li>
                                                             <!-- dropdownlist -->
-                                                            <li style="margin-top: 5px">Total: 500gb </li>
-                                                            <li style="margin-top: 5px">Espaço Usado: 300gb</li>
-                                                            <li style="margin-top: 5px">Espaço Livre: 200gb</li>
+                                                            <li style="margin-top: 5px">Total:
+                                                                <asp:Label Text="" ID="lblTotalSpace" runat="server" />GB</li>
+                                                            <li style="margin-top: 5px">Espaço usado:
+                                                                <asp:Label Text="" ID="lblUsageSpace" runat="server" />GB</li>
+                                                            <li style="margin-top: 5px">Espaço livre:
+                                                                <asp:Label Text="" ID="lblFreeSpace" runat="server" />GB</li>
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                        </div>
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="memoria_ram" role="tabpanel">

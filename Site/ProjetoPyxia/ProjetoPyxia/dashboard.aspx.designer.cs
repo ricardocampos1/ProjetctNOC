@@ -58,6 +58,51 @@ namespace Pyxia {
         protected global::System.Web.UI.WebControls.Label lblLogicalCore;
         
         /// <summary>
+        /// Controle lblTemperatura.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTemperatura;
+        
+        /// <summary>
+        /// Controle ddlHardDisk.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHardDisk;
+        
+        /// <summary>
+        /// Controle lblTotalSpace.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalSpace;
+        
+        /// <summary>
+        /// Controle lblUsageSpace.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsageSpace;
+        
+        /// <summary>
+        /// Controle lblFreeSpace.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFreeSpace;
+        
+        /// <summary>
         /// Controle lblMemoriaTotal.
         /// </summary>
         /// <remarks>
