@@ -1,10 +1,14 @@
 package DataBase;
 
+import Handlers.Logger;
 import Handlers.Processor;
 import Handlers.RamMemory;
 import Handlers.SystemOperation;
 import Screens.Login;
+import static Screens.Login.ID_USER;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 public class Machine {
 
@@ -38,14 +42,26 @@ public class Machine {
                 commandSQL = "select id_machine from tb_machine where id_user = " + id_user + " and name_machine = '" + name_machine + "'";
                 this.id_machine = dataBase.executeQuery(commandSQL);
                 System.out.println(this.id_machine);
+                
+                // usuário tal cadasgtrou a maquina 
+                Logger logger=new Logger();
+                logger.LogTxt("O usuário"+ID_USER+"cadastrou a maquina"+id_machine);
 
                 dataBase.executeQuery("insert into tb_real_time_machine (processor_usage, processor_temperature"
                         + ", ram_memory_usage, ram_memory_available, id_machine) values "
                         + "(" + processor.getPercent() + ", " + processor.getTemperature() + ""
                         + ", " + ramMemory.getUsage() + ", " + ramMemory.getAvailable() + ", " + id_machine + ")");
+                
             }
         } catch (Exception e) {
             System.out.println("Erro!!!");
+            // Erro de conexão ao inserir a maquina
+            Logger logger= new Logger();
+            try {
+                logger.LogTxt("Erro de conexão ao tentar inserir a maquina do usuário"+ID_USER);
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(Machine.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }

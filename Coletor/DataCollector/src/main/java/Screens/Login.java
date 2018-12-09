@@ -6,13 +6,16 @@
 package Screens;
 
 import DataBase.Machine;
+import Handlers.Logger;
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
 import javax.swing.JOptionPane;
 
 /**
@@ -203,6 +206,8 @@ public class Login extends javax.swing.JFrame {
                     ID_USER = resultSet.getInt(1);
                     //nova tela
                     conn.close();
+                    Logger logger = new Logger();
+                    logger.LogTxt("O usuário " + ID_USER + " efetuou login.");
                     new UserMachine().setVisible(true);
                     this.dispose();
 //                    JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!", "Login", JOptionPane.INFORMATION_MESSAGE);
@@ -211,12 +216,29 @@ public class Login extends javax.swing.JFrame {
                 } else {
                     conn.close();
                     JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Login", JOptionPane.ERROR_MESSAGE);
+                     Logger logger = new Logger();
+                    logger.LogTxt(" Usuário  ou Senha incorreta !");
                 }
             } catch (SQLException e) {
                 System.out.println("Erro no SQL");
+                Logger logger =new Logger();
+                try {
+                    logger.LogTxt("Erro de Comando");
+                } catch (IOException ex) {
+                    java.util.logging.Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (SQLException e) {
             System.out.println("Erro na Conexão");
+            Logger logger=new Logger();
+            try {
+                logger.LogTxt("Erro de Conexão com o Banco de Dados.");
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
