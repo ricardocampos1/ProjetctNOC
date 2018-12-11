@@ -24,11 +24,11 @@ setInterval(() => {
         data: '{}',
         success: function (data) {
             data.d = data.d.replace(",", ".");
-            console.log(PieChart.data.datasets[0].data[0] = parseFloat(data.d));
+            PieChart.data.datasets[0].data[0] = parseFloat(data.d);
             PieChart.update();
         },
         error: function (xhr, status, error) {
-            console.log('erro: ' + error);
+            console.log("Erro HardDiskLivreGrafico: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);
@@ -42,11 +42,11 @@ setInterval(() => {
         data: '{}',
         success: function (data) {
             data.d = data.d.replace(",", ".");
-            console.log(PieChart.data.datasets[0].data[1] = parseFloat(data.d));
+            PieChart.data.datasets[0].data[1] = parseFloat(data.d);
             PieChart.update();
         },
         error: function (xhr, status, error) {
-            console.log('erro: ' + error);
+            console.log("Erro HardDiskUsadoGrafico: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);

@@ -9,8 +9,7 @@
             document.getElementById("RamLivre").innerHTML = response.d + " GB";
         },
         error: function (xhr, status, error) {
-            alert(error);
-            console.log('tchau');
+            console.log("Erro RamLivre: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);

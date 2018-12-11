@@ -36,8 +36,7 @@ setInterval(() => {
             LinhaGrafico1.update();
         },
         error: function (xhr, status, error) {
-            alert(error)
-            console.log('tchau')
+            console.log("Erro UltimoProcessador: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);
