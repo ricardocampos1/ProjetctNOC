@@ -13,6 +13,11 @@ namespace Pyxia
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(Session["id_user"] as string))
+            {
+                Response.Redirect("login.aspx");
+            }
             if (!this.IsPostBack)
             {
                 using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -33,11 +38,9 @@ namespace Pyxia
                     }
                 }
                 ddlMachine.Items.Insert(0, new ListItem("Computadores", "0"));
-
                 HttpContext.Current.Session["id_machine"] = 0;
                 HttpContext.Current.Session["id_hd"] = 0;
             }
-
             SetLabelProcessador();
             SetLabelNomeSO();
             SetLabelMemoriaTotal();
@@ -149,9 +152,22 @@ namespace Pyxia
             SetLabelProcessador();
             SetLabelNomeSO();
             SetLabelMemoriaTotal();
+            ddlHardDisk_Populate();
+        }
+
+        protected void ddlHardDisk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session["id_hd"] = ddlHardDisk.SelectedValue.ToString();
+            SetLabelHardDisk();
+        }
+
+        protected void ddlHardDisk_Populate()
+        {
+            ddlHardDisk.Items.Clear();
+            ddlHardDisk.Controls.Clear();
             using (SqlConnection conn = new SqlConnection("Server=tcp:pyxia.database.windows.net,1433;Initial Catalog=Pyxia;Persist Security Info=False;User ID=pyxia;Password=Admin@admin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT id_hd, absolut_path FROM tb_hard_disk where id_machine = " + HttpContext.Current.Session["id_machine"].ToString()))
+                using (SqlCommand cmd = new SqlCommand("SELECT id_hd, absolut_path FROM tb_hard_disk where id_machine =" + HttpContext.Current.Session["id_machine"].ToString()))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = conn;
@@ -166,13 +182,7 @@ namespace Pyxia
                     }
                 }
             }
-            ddlHardDisk.Items.Insert(0, new ListItem("Lista de HDs", "0"));
-        }
-
-        protected void ddlHardDisk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HttpContext.Current.Session["id_hd"] = ddlHardDisk.SelectedValue.ToString();
-            SetLabelHardDisk();
+            ddlHardDisk.Items.Insert(0, new ListItem("List de HDs", "0"));
         }
     }
 }

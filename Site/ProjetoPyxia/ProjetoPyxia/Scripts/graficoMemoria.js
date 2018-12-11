@@ -36,7 +36,7 @@ setInterval(() => {
             LinhaGrafico2.update();
         },
         error: function (xhr, status, error) {
-            console.log('erro');
+            console.log("Erro PorcentagemUsada: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);

@@ -6,12 +6,10 @@
         dataType: 'json',
         data: '{}',
         success: function (response) {
-            console.log(response.d)
-            document.getElementById("RamUsada").innerHTML = response.d + " GB"
+            document.getElementById("RamUsada").innerHTML = response.d + " GB";
         },
         error: function (xhr, status, error) {
-            alert(error)
-            console.log('tchau')
+            console.log("Erro RamUsada: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);
