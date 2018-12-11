@@ -191,6 +191,7 @@ namespace Pyxia
 
         [WebMethod]
         public static string getHardDiskUsadoGrafico()
+
         {
             return Math.Round(getHardDiskUsado(), 2).ToString();
         }
