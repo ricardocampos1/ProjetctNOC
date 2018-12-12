@@ -10,12 +10,12 @@ var LinhaGrafico2 = new Chart(ctx, {
         labels: [],
         datasets: [{
             //Legenda referente ao dado
-            label: "Teste Grafico Dashboard",
+            label: "Uso em porcentagem x Horario",
             //Dados em relação ao conteudo acima
             data: [],
             borderWidht: 3,
             borderColor: "rgba(15,259,989)",
-            background: "transparent",
+            background: "transparent"
         }]
     }
 });
@@ -36,7 +36,7 @@ setInterval(() => {
             LinhaGrafico2.update();
         },
         error: function (xhr, status, error) {
-            console.log('erro')
+            console.log("Erro PorcentagemUsada: " + xhr + ", " + status + ", " + error);
         }
     });
 }, 5000);
