@@ -104,6 +104,7 @@
     <Content Include="css\styleFale.css" />
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleMaster.css" />
+    <Content Include="css\stylePerfil.css" />
     <Content Include="css\styleProjeto.css" />
     <Content Include="dashboard.aspx" />
     <Content Include="FaleConosco.aspx" />
@@ -119,6 +120,7 @@
     <Content Include="img\img_avatar2.png" />
     <Content Include="Login.aspx" />
     <Content Include="PaginaAjax.aspx" />
+    <Content Include="Perfil.aspx" />
     <Content Include="Projeto.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -207,6 +209,13 @@
     </Compile>
     <Compile Include="PaginaAjax.aspx.designer.cs">
       <DependentUpon>PaginaAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Projeto.aspx.cs">
       <DependentUpon>Projeto.aspx</DependentUpon>

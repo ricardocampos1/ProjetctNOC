@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Teste</title>
+    <title>Pyx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
@@ -47,7 +47,7 @@
                         <nav>
                             <ul class="metismenu" id="menu">
                                 <li>
-                                    <a href="invoice.html" aria-expanded="true"><i class="ti-user"></i>
+                                    <a href="perfil.aspx" aria-expanded="true"><i class="ti-user"></i>
                                         <span style="margin-left: 2.6rem">Perfil</span></a>
                                 </li>
                                 <li class="ddl-li">
