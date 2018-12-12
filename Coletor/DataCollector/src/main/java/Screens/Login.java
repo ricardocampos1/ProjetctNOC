@@ -7,6 +7,7 @@ package Screens;
 
 import DataBase.Machine;
 import Handlers.Logger;
+import SlackIntegration.Message;
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -25,7 +26,9 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     
     public static int ID_USER = 0;
-
+    Message mensagem = new Message();
+    Machine maquina = new Machine();
+    int id_machine = maquina.getId_machine();
     /**
      * Creates new form Login
      */
@@ -208,6 +211,7 @@ public class Login extends javax.swing.JFrame {
                     conn.close();
                     Logger logger = new Logger();
                     logger.LogTxt("O usuário " + ID_USER + " efetuou login.");
+                    mensagem.sendMessage(Login.class.getName() + " | usuário " + ID_USER + " | efetuou login.");
                     new UserMachine().setVisible(true);
                     this.dispose();
 //                    JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!", "Login", JOptionPane.INFORMATION_MESSAGE);
@@ -216,12 +220,14 @@ public class Login extends javax.swing.JFrame {
                 } else {
                     conn.close();
                     JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!", "Login", JOptionPane.ERROR_MESSAGE);
-                     Logger logger = new Logger();
+                    Logger logger = new Logger();
                     logger.LogTxt(" Usuário  ou Senha incorreta !");
                 }
             } catch (SQLException e) {
                 System.out.println("Erro no SQL");
-                Logger logger =new Logger();
+                mensagem.sendMessage("Login usuário " + ID_USER + " aprentou erro no SQL");
+                mensagem.sendMessage(Login.class.getName() + " | usuário " + ID_USER + " | erro no SQL");
+                Logger logger = new Logger();
                 try {
                     logger.LogTxt("Erro de Comando");
                 } catch (IOException ex) {
@@ -233,6 +239,7 @@ public class Login extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             System.out.println("Erro na Conexão");
+            mensagem.sendMessage(Login.class.getName() + " | usuário " + ID_USER + " | erro na conexão");
             Logger logger=new Logger();
             try {
                 logger.LogTxt("Erro de Conexão com o Banco de Dados.");
