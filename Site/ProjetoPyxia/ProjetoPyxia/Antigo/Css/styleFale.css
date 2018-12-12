@@ -1,0 +1,238 @@
+﻿
+.ddl-contact {
+    font-family: 'Ubuntu', sans-serif;
+    background: black;
+    width: 181px;
+    margin: 0 0 13px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 0px;
+    border-radius: 5%;
+    text-align: center;
+    height: 25px;
+    color: #fff;
+}
+
+.resposta {
+    color: #fff;
+    text-align: center;
+}
+
+.contact {
+    width: 140px;
+    font-family: 'Ubuntu', sans-serif;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ff007f;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 1rem;
+    margin-left: 5rem;
+    margin-top: 6rem;
+    font-size: 23px;
+}
+
+.input1 {
+    font-family: 'Ubuntu', sans-serif;
+    outline: 0;
+    background: black;
+    width: 181px;
+    margin: 0 0 13px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 0px;
+    border-radius: 5%;
+    text-align: center;
+    height: 10px;
+    color: #fff;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 450px;
+    padding: 60px 50px 50px;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    min-height: 450px;
+}
+
+.pergunta {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff
+}
+
+.text-area {
+    background-color: black;
+    color: #fff;
+    border: 0px;
+    height: 150px;
+}
+
+.botão {
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #11a08f;
+    width: 130px;
+    border: 0;
+    padding: 9px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: ease 0.3s;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+    .ddl-contact {
+        font-family: 'Ubuntu', sans-serif;
+        background: black;
+        width: 181px;
+        margin: 0 0 13px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 0px;
+        border-radius: 5%;
+        text-align: center;
+        height: 25px;
+        color: #fff;
+    }
+
+    .contact {
+        width: 140px;
+        font-family: 'Ubuntu', sans-serif;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #ff007f;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        margin-bottom: 1rem;
+        margin-left: 5rem;
+        margin-top: 6rem;
+        font-size: 23px;
+    }
+
+    .resposta {
+        color: #fff;
+        text-align: center;
+    }
+
+    .input1 {
+        font-family: 'Ubuntu', sans-serif;
+        outline: 0;
+        background: black;
+        width: 181px;
+        margin: 0 0 13px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 0px;
+        border-radius: 5%;
+        text-align: center;
+        height: 10px;
+        color: #fff;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+        max-width: 450px;
+        margin: 0 auto;
+        width: 450px;
+        padding: 60px 50px 50px;
+        text-align: center;
+        border-radius: 10px;
+        display: block;
+        min-height: 400px;
+        margin-left: -2.5rem;
+    }
+
+    .pergunta {
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff
+    }
+
+    .text-area {
+        background-color: black;
+        color: #fff;
+        border: 0px;
+    }
+
+    .botão {
+        font-family: 'Ubuntu', sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #11a08f;
+        width: 130px;
+        border: 0;
+        padding: 9px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: ease 0.3s;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+        
+     .botão:hover {
+            background-color: #9600ed;
+        }
+
+    p {
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        color: #fff;
+    }
+
+    ::-moz-placeholder { /* Firefox 19+ */
+        color: #fff;
+    }
+
+    :-ms-input-placeholder {
+        color: #fff;
+    }
+}

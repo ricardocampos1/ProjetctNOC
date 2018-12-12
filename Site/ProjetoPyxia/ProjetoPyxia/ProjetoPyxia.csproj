@@ -68,6 +68,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Antigo\ComoFunciona.aspx" />
+    <Content Include="Antigo\Css\reset.css" />
+    <Content Include="Antigo\Css\style.css" />
+    <Content Include="Antigo\Css\styleComo.css" />
+    <Content Include="Antigo\Css\styleFale.css" />
+    <Content Include="Antigo\Css\styleHome.css" />
+    <Content Include="Antigo\Css\styleOqPyxia.css" />
+    <Content Include="Antigo\Fale.aspx" />
+    <Content Include="Antigo\Home.aspx" />
+    <Content Include="Antigo\img\background.jpg" />
+    <Content Include="Antigo\img\dashboard.png" />
+    <Content Include="Antigo\img\graficos.png" />
+    <Content Include="Antigo\img\hd.png" />
+    <Content Include="Antigo\img\logo_pyxia.png" />
+    <Content Include="Antigo\img\nova3.png" />
+    <Content Include="Antigo\img\processador.png" />
+    <Content Include="Antigo\img\Pyx.png" />
+    <Content Include="Antigo\OquePyxia.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\default-css.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -128,6 +146,7 @@
     <Content Include="Scripts\graficoMemoria.js" />
     <Content Include="Scripts\graficoProcessador.js" />
     <Content Include="Pyxia.Master" />
+    <Content Include="Antigo\Pyxia.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -167,6 +186,36 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\ComoFunciona.aspx.cs">
+      <DependentUpon>ComoFunciona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\ComoFunciona.aspx.designer.cs">
+      <DependentUpon>ComoFunciona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Fale.aspx.cs">
+      <DependentUpon>Fale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Fale.aspx.designer.cs">
+      <DependentUpon>Fale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\OquePyxia.aspx.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\OquePyxia.aspx.designer.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Pyxia.Master.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Antigo\Pyxia.Master.designer.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
     </Compile>
     <Compile Include="Cadastro.aspx.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -260,6 +309,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

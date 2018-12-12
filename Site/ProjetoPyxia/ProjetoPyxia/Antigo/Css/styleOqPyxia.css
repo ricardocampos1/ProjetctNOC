@@ -1,0 +1,40 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1{
+ color:white;
+ margin-left:5%;
+ margin-top:3%;
+ font-size:24px;
+}
+
+p {
+    text-align: justify;
+    color: white;
+    margin-left: 5%;
+    margin-top:4%;
+    font-size:18px;
+}
+
+.content_pyxia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: inherit;
+    padding: 5vh;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+    margin:4%;
+    padding-bottom:0%;
+    padding-top:0%;
+}
+
+    .content_pyxia * {
+        margin: 0;
+        padding: 3vh 0;
+        color: white;
+    }
+
+   
