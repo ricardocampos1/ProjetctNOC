@@ -68,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Antigo\ComoFunciona.aspx" />
+    <Content Include="ComoFunciona.aspx" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
-    <Content Include="Antigo\Css\styleComo.css" />
+    <Content Include="css\styleComo.css" />
     <Content Include="css\styleFale.css" />
     <Content Include="css\styleHome.css" />
     <Content Include="css\styleOqPyxia.css" />
@@ -182,10 +182,11 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Antigo\ComoFunciona.aspx.cs">
+    <Compile Include="ComoFunciona.aspx.cs">
       <DependentUpon>ComoFunciona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Antigo\ComoFunciona.aspx.designer.cs">
+    <Compile Include="ComoFunciona.aspx.designer.cs">
       <DependentUpon>ComoFunciona.aspx</DependentUpon>
     </Compile>
     <Compile Include="Fale.aspx.cs">

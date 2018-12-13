@@ -37,7 +37,7 @@
             <div class="sidebar-menu">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="Home.aspx">
                             <img src="assets/images/Imagem1.png" alt="imagem" /></a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                 </div>
                                 <h4 class="page-title pull-left">Dashboard</h4>
                                 <ul class="breadcrumbs pull-left">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="Home.aspx">Home</a></li>
                                     <li><span>Dashboard</span></li>
                                 </ul>
                             </div>

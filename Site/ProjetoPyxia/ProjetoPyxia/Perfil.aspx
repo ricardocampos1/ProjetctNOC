@@ -37,7 +37,7 @@
             <div class="sidebar-menu">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="Home.aspx">
                             <img src="assets/images/Imagem1.png" alt="imagem" /></a>
                     </div>
                 </div>
@@ -47,11 +47,11 @@
                         <nav>
                             <ul class="metismenu" id="menu">
                                 <li>
-                                    <a href="invoice.html" aria-expanded="true"><i class="ti-user"></i>
+                                    <a href="#" aria-expanded="true"><i class="ti-user"></i>
                                         <span style="margin-left: 2.6rem">Perfil</span></a>
                                 </li>
                                 <li style="margin-top: 23rem">
-                                    <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
+                                    <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>
                                         <span style="margin-left: 2.6rem">Sair</span></a>
                                 </li>
                             </ul>
@@ -74,7 +74,7 @@
                                 </div>
                                 <h4 class="page-title pull-left">Dashboard</h4>
                                 <ul class="breadcrumbs pull-left">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="Home.aspx">Home</a></li>
                                     <li><a href="dashboard.aspx">Dashboard</a></li>
                                     <li><span>Perfil</span></li>
                                 </ul>
