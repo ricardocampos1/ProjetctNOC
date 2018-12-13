@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Fale.aspx.cs" Inherits="PyxiaTwo.Fale" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Fale.aspx.cs" Inherits="ProjetoPyxia.Fale" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
@@ -14,7 +14,7 @@
     <title>Pyxia</title>
 </head>
 <body>
-   
+
     <form runat="server" id="frmFaleConosco">
         <header>
             <div class="container">
@@ -26,13 +26,13 @@
                             <li><a href="Home.aspx">Home</a></li>
                             <li><a href="OquePyxia.aspx">O que é Pyxia?</a></li>
                             <li><a href="Fale.aspx">Fale Conosco</a></li>
-                              <li><a href="ComoFunciona.aspx">Como Funciona?</a></li>
+                            <li><a href="ComoFunciona.aspx">Como Funciona?</a></li>
                         </ul>
                     </nav>
                     <div class="login_action">
-                       <asp:TextBox  runat ="server" type="email" placeholder="E-mail" ID="TxtEmail" />
-                 <asp:TextBox runat="server" type="password" placeholder="Senha" ID="TxtSenha" />
-                 <asp:Button Text="Entrar" runat="server" ID="BtnEntrar" />
+                        <asp:TextBox runat="server" type="text" placeholder="Usuário" ID="txtUserLogin" />
+                        <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordLogin" />
+                        <asp:Button Text="Entrar" runat="server" ID="BtnLogin" OnClick="BtnLogin_OnClick" />
                     </div>
                 </div>
             </div>
@@ -45,15 +45,18 @@
             <p class="resposta">Mas se mesmo assim você tiver alguma dúvida ou quiser nos dar alguma sugestão, entre em contato agora mesmo!</p>
 
             <div class="form">
-                <asp:TextBox ID="txtemail2" type="email" placeholder="Nome" runat="server" CssClass="input1" required></asp:TextBox>
-                <asp:TextBox ID="txtassunto" placeholder="E-mail" runat="server" CssClass="input1" required></asp:TextBox>
-                <asp:DropDownList runat="server" CssClass="ddl-contact">
+                <asp:TextBox ID="txtName" placeholder="Seu nome" runat="server" CssClass="input1" />
+                <asp:TextBox ID="txtEmail" placeholder="E-mail" TextMode="Email" runat="server" CssClass="input1" />
+                <asp:DropDownList runat="server" CssClass="ddl-contact" ID="ddlMatter">
                     <asp:ListItem Text="Selecione o Assunto"></asp:ListItem>
                     <asp:ListItem Text="Sugestão" />
                     <asp:ListItem Text="Problema de Login" />
+                    <asp:ListItem Text="Problemas com a DashBoard" />
+                    <asp:ListItem Text="Dúvidas com o Pyx" />
+                    <asp:ListItem Text="Outros" />
                 </asp:DropDownList>
-                <asp:TextBox ID="TextArea1" TextMode="multiline" Columns="50" Rows="5" runat="server" placeholder="Digite sua mensagem..." CssClass="text-area" />
-                <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="botão" />
+                <asp:TextBox ID="txtBodyEmail" TextMode="multiline" Columns="50" Rows="5" runat="server" placeholder="Digite sua mensagem..." CssClass="text-area" />
+                <asp:Button ID="BtnSend" runat="server" Text="Enviar" CssClass="botão" OnClick="BtnSend_OnClick" />
             </div>
         </main>
         <footer>
