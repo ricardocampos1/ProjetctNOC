@@ -7,126 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pyxia {
+namespace ProjetoPyxia {
     
     
-    public partial class dashboard1 {
+    public partial class Fale {
         
         /// <summary>
-        /// ddlMachine control.
+        /// frmFaleConosco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMachine;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmFaleConosco;
         
         /// <summary>
-        /// lblNameSO control.
+        /// txtUserLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNameSO;
+        protected global::System.Web.UI.WebControls.TextBox txtUserLogin;
         
         /// <summary>
-        /// lblNameProcessor control.
+        /// txtPasswordLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNameProcessor;
+        protected global::System.Web.UI.WebControls.TextBox txtPasswordLogin;
         
         /// <summary>
-        /// lblPhysicalCore control.
+        /// BtnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhysicalCore;
+        protected global::System.Web.UI.WebControls.Button BtnLogin;
         
         /// <summary>
-        /// lblLogicalCore control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogicalCore;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// lblTemperatura control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTemperatura;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// ddlHardDisk control.
+        /// ddlMatter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHardDisk;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMatter;
         
         /// <summary>
-        /// lblTotalSpace control.
+        /// txtBodyEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalSpace;
+        protected global::System.Web.UI.WebControls.TextBox txtBodyEmail;
         
         /// <summary>
-        /// lblUsageSpace control.
+        /// BtnSend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsageSpace;
-        
-        /// <summary>
-        /// lblFreeSpace control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFreeSpace;
-        
-        /// <summary>
-        /// lblMemoriaTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemoriaTotal;
-        
-        /// <summary>
-        /// RamUsada control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RamUsada;
-        
-        /// <summary>
-        /// RamLivre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RamLivre;
+        protected global::System.Web.UI.WebControls.Button BtnSend;
     }
 }

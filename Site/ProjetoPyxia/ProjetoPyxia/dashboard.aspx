@@ -56,7 +56,7 @@
                                     </asp:DropDownList>
                                 </li>
                                 <li style="margin-top: 23rem">
-                                    <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
+                                    <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>
                                         <span style="margin-left: 2.6rem">Sair</span></a>
                                 </li>
                             </ul>

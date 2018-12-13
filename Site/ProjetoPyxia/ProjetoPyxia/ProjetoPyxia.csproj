@@ -72,10 +72,10 @@
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
     <Content Include="Antigo\Css\styleComo.css" />
-    <Content Include="Antigo\Css\styleFale.css" />
+    <Content Include="css\styleFale.css" />
     <Content Include="css\styleHome.css" />
     <Content Include="css\styleOqPyxia.css" />
-    <Content Include="Antigo\Fale.aspx" />
+    <Content Include="Fale.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\background.jpg" />
     <Content Include="img\dashboard.png" />
@@ -118,7 +118,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\logincss.css" />
     <Content Include="css\styleCadastro.css" />
-    <Content Include="css\styleFale.css" />
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleMaster.css" />
     <Content Include="css\stylePerfil.css" />
@@ -189,10 +188,11 @@
     <Compile Include="Antigo\ComoFunciona.aspx.designer.cs">
       <DependentUpon>ComoFunciona.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Antigo\Fale.aspx.cs">
+    <Compile Include="Fale.aspx.cs">
       <DependentUpon>Fale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Antigo\Fale.aspx.designer.cs">
+    <Compile Include="Fale.aspx.designer.cs">
       <DependentUpon>Fale.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
@@ -280,9 +280,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Antigo\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
