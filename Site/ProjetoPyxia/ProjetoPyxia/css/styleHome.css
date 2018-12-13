@@ -1,0 +1,89 @@
+﻿input {
+    background: rgba(239, 23, 77, 0.6);
+    border: none;
+    border-radius: 3px;
+    padding: 1vh 1vw;
+    margin-right: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home {
+    display: flex;
+    margin: 5vh;
+    max-width: 90vw;
+    max-height: 70vh;
+    height: 70vh;
+}
+
+    .home * {
+        margin: 1vh 5vh;
+        text-align: center;
+        color:white;
+    }
+
+.content_account {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 25vw;
+    width: 25vw;
+    padding: 5vh;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+    .content_account a {
+        background: rgba(17, 160, 143,1);
+        border: none;
+        border-radius: 3px;
+        width: 100px;
+        padding: 1vh 1vw;
+        transition: ease-in 0.3s;
+    }
+
+        .content_account a:hover {
+            background: rgba(17, 160, 143, 0.6);
+        }
+
+.content_download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+    .content_download * {
+        margin: 0;
+        padding: 3vh 0;
+        color:white;
+    }
+
+    .content_download a {
+        background: rgba(17, 160, 143,1);
+        border: none;
+        padding: 30px 20px;
+        border-radius: 50%;
+        transition: ease-in 0.3s;
+    }
+
+        .content_download a:hover {
+            background: rgba(17, 160, 143, 0.6);
+        }
+
+    .content_download span a {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        color: rgba(17, 160, 143, 0.6);
+    }
+
+        .content_download span a:hover {
+            background: 0;
+            color: rgba(17, 160, 143,1);
+        }
