@@ -13,6 +13,10 @@ namespace ProjetoPyxia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session["id_user"] as string))
+            {
+                Response.Redirect("home.aspx");
+            }
 
         }
 

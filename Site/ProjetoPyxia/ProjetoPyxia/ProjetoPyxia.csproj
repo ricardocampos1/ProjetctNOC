@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="ComoFunciona.aspx" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
@@ -123,7 +122,6 @@
     <Content Include="css\stylePerfil.css" />
     <Content Include="css\styleProjeto.css" />
     <Content Include="dashboard.aspx" />
-    <Content Include="FaleConosco.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\2.1.jpeg" />
@@ -135,7 +133,6 @@
     <Content Include="img\img_avatar2.png" />
     <Content Include="PaginaAjax.aspx" />
     <Content Include="Perfil.aspx" />
-    <Content Include="Projeto.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\graficoDisco.js" />
@@ -175,13 +172,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ComoFunciona.aspx.cs">
       <DependentUpon>ComoFunciona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,13 +214,6 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FaleConosco.aspx.cs">
-      <DependentUpon>FaleConosco.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FaleConosco.aspx.designer.cs">
-      <DependentUpon>FaleConosco.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PaginaAjax.aspx.cs">
       <DependentUpon>PaginaAjax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,13 +227,6 @@
     </Compile>
     <Compile Include="Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Projeto.aspx.cs">
-      <DependentUpon>Projeto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Projeto.aspx.designer.cs">
-      <DependentUpon>Projeto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
