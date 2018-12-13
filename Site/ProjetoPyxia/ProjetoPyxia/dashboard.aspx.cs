@@ -16,7 +16,7 @@ namespace Pyxia
 
             if (string.IsNullOrEmpty(Session["id_user"] as string))
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("home.aspx");
             }
             if (!this.IsPostBack)
             {
