@@ -74,7 +74,7 @@
     <Content Include="Antigo\Css\styleComo.css" />
     <Content Include="Antigo\Css\styleFale.css" />
     <Content Include="css\styleHome.css" />
-    <Content Include="Antigo\Css\styleOqPyxia.css" />
+    <Content Include="css\styleOqPyxia.css" />
     <Content Include="Antigo\Fale.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\background.jpg" />
@@ -85,7 +85,7 @@
     <Content Include="img\nova3.png" />
     <Content Include="img\processador.png" />
     <Content Include="img\Pyx.png" />
-    <Content Include="css\OquePyxia.aspx" />
+    <Content Include="OquePyxia.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\default-css.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -134,7 +134,6 @@
     <Content Include="img\fundo.jpg" />
     <Content Include="img\img0.png" />
     <Content Include="img\img_avatar2.png" />
-    <Content Include="Login.aspx" />
     <Content Include="PaginaAjax.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Projeto.aspx" />
@@ -203,11 +202,11 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="css\OquePyxia.aspx.cs">
+    <Compile Include="OquePyxia.aspx.cs">
       <DependentUpon>OquePyxia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="css\OquePyxia.aspx.designer.cs">
+    <Compile Include="OquePyxia.aspx.designer.cs">
       <DependentUpon>OquePyxia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pyxia.Master.cs">
@@ -230,13 +229,6 @@
     </Compile>
     <Compile Include="FaleConosco.aspx.designer.cs">
       <DependentUpon>FaleConosco.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaAjax.aspx.cs">
       <DependentUpon>PaginaAjax.aspx</DependentUpon>
