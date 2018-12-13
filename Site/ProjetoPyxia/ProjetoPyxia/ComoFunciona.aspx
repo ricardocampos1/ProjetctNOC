@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pyxia.Master" AutoEventWireup="true" CodeBehind="ComoFunciona.aspx.cs" Inherits="PyxiaTwo.ComoFunciona" %>
-<asp:Content ID="Contenudo" ContentPlaceHolderID="Conteudo" runat="server">
+<asp:Content ID="Conteudo" ContentPlaceHolderID="Conteudo" runat="server">
     <div>
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
