@@ -69,23 +69,23 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Antigo\ComoFunciona.aspx" />
-    <Content Include="Antigo\Css\reset.css" />
-    <Content Include="Antigo\Css\style.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
     <Content Include="Antigo\Css\styleComo.css" />
     <Content Include="Antigo\Css\styleFale.css" />
-    <Content Include="Antigo\Css\styleHome.css" />
+    <Content Include="css\styleHome.css" />
     <Content Include="Antigo\Css\styleOqPyxia.css" />
     <Content Include="Antigo\Fale.aspx" />
-    <Content Include="Antigo\Home.aspx" />
-    <Content Include="Antigo\img\background.jpg" />
-    <Content Include="Antigo\img\dashboard.png" />
-    <Content Include="Antigo\img\graficos.png" />
-    <Content Include="Antigo\img\hd.png" />
-    <Content Include="Antigo\img\logo_pyxia.png" />
-    <Content Include="Antigo\img\nova3.png" />
-    <Content Include="Antigo\img\processador.png" />
-    <Content Include="Antigo\img\Pyx.png" />
-    <Content Include="Antigo\OquePyxia.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\dashboard.png" />
+    <Content Include="img\graficos.png" />
+    <Content Include="img\hd.png" />
+    <Content Include="img\logo_pyxia.png" />
+    <Content Include="img\nova3.png" />
+    <Content Include="img\processador.png" />
+    <Content Include="img\Pyx.png" />
+    <Content Include="css\OquePyxia.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\default-css.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -111,7 +111,6 @@
     <Content Include="assets\js\scripts.js" />
     <Content Include="assets\js\vendor\jquery-2.2.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
-    <Content Include="Cadastro.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -128,7 +127,6 @@
     <Content Include="FaleConosco.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Homepage.aspx" />
     <Content Include="img\2.1.jpeg" />
     <Content Include="img\2.jpg" />
     <Content Include="img\3.jpg" />
@@ -146,7 +144,6 @@
     <Content Include="Scripts\graficoMemoria.js" />
     <Content Include="Scripts\graficoProcessador.js" />
     <Content Include="Pyxia.Master" />
-    <Content Include="Antigo\Pyxia.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -199,30 +196,26 @@
     <Compile Include="Antigo\Fale.aspx.designer.cs">
       <DependentUpon>Fale.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Antigo\Home.aspx.cs">
+    <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Antigo\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Antigo\OquePyxia.aspx.cs">
-      <DependentUpon>OquePyxia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Antigo\OquePyxia.aspx.designer.cs">
-      <DependentUpon>OquePyxia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Antigo\Pyxia.Master.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Antigo\Pyxia.Master.designer.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro.aspx.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cadastro.aspx.designer.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="css\OquePyxia.aspx.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="css\OquePyxia.aspx.designer.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pyxia.Master.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pyxia.Master.designer.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -237,13 +230,6 @@
     </Compile>
     <Compile Include="FaleConosco.aspx.designer.cs">
       <DependentUpon>FaleConosco.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Homepage.aspx.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Homepage.aspx.designer.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -274,13 +260,6 @@
       <DependentUpon>Projeto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pyxia.Master.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pyxia.Master.designer.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
@@ -309,7 +288,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Antigo\img\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
