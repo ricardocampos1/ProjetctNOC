@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pyxia.Master" AutoEventWireup="true" CodeBehind="OquePyxia.aspx.cs" Inherits="PyxiaTwo.OquePyxia" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pyxia.Master" AutoEventWireup="true" CodeBehind="OquePyxia.aspx.cs" Inherits="ProjetoPyxia.OquePyxia" %>
 <asp:Content ID="Conteudo" ContentPlaceHolderID="Conteudo" runat="server">
     <div>
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
