@@ -32,9 +32,9 @@
                         </ul>
                     </nav>
                     <div class="login_action">
-                        <asp:TextBox runat="server" type="text" placeholder="Usuário" ID="txtUserLogin" />
-                        <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordLogin" />
-                        <asp:Button Text="Entrar" runat="server" ID="BtnLogin" OnClick="BtnLogin_OnClick" />
+                        <asp:TextBox runat="server" type="text" placeholder="Usuário" ID="txtUserLogin" CssClass="field_login" />
+                        <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordLogin" CssClass="field_login" />
+                        <asp:Button Text="Entrar" runat="server" ID="BtnLogin" OnClick="BtnLogin_OnClick" CssClass="button_login" />
                     </div>
                 </div>
             </div>
@@ -45,22 +45,22 @@
                 <section class="content_account">
                     <span>Com um simples account você já pode começar a usar!
                     </span>
-                    <asp:TextBox runat="server" type="email" placeholder="E-mail" ID="txtEmailRegister" />
-                    <asp:TextBox runat="server" type="text" placeholder="Usuario" ID="txtUserRegister" />
+                    <asp:TextBox runat="server" type="email" placeholder="exemplo@exemplo.com.br" ID="txtEmailRegister" />
+                    <asp:TextBox runat="server" type="text" placeholder="exemplo" ID="txtUserRegister" />
                     <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordRegister" />
-                    <asp:TextBox runat="server" type="password" placeholder="Confirma Senha" ID="txtPasswordConfirmRegister" />
+                    <asp:TextBox runat="server" type="password" placeholder="Confime a senha" ID="txtPasswordConfirmRegister" />
                     <label>Data de Nascimento</label>
-                    <asp:TextBox runat="server" type="text" TextMode="Date" ID="txtDateRegister" />
-                    <asp:Button Text="Cadastrar" runat="server" ID="BtnUserRegister" OnClick="BtnUserRegister_OnClick" />
+                    <asp:TextBox runat="server" type="text" TextMode="Date" ID="txtDateRegister"/>
+                    <asp:Button Text="Cadastrar" runat="server" ID="BtnUserRegister" OnClick="BtnUserRegister_OnClick" CssClass="button_register" />
                     <span>Pronto! Agora, faça seu login na aplicação e no topo do site</span>
                 </section>
                 <section class="content_download">
-                    <p>A Pyxia surgiu com o desejo de facilitar a vida de uem quer cuidar do seu computador</p>
+                    <p>A Pyxia surgiu com o desejo de facilitar a vida de quem quer cuidar do seu computador</p>
                     <span>Com gráficos e alertas simples para você só se preocupar com o que realmente importa!</span>
                     <span>Gostou? Para ter tudo isso, basta realizar seu cadastro, instalar nossa aplicação e fazer seu
                         login</span>
-                    <a href="#">Baixar</a>
-                    <span>Ficou com alguma dúvida? Acesse <a href="#">aqui</a> um passo a passo ou <a href="#">envie-nos
+                    <a href="https://pyxia.file.core.windows.net/pyx-jar/DataCollector-1.0.4-jar-with-dependencies.jar?sv=2018-03-28&ss=bqtf&srt=sco&sp=rwdlacup&se=2018-12-14T20:24:34Z&sig=GUwWpMj9wIe7wMfbOKaLXewaYBuG9NPDD6Z3eBudkO4%3D&_=1544790312231">Baixar</a>
+                    <span>Ficou com alguma dúvida? Acesse <a href="#">aqui</a> um passo a passo ou <a href="Fale.aspx">envie-nos
                             uma mensagem</a></span>
                 </section>
             </div>
