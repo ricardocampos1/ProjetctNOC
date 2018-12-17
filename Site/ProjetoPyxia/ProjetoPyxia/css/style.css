@@ -17,10 +17,12 @@ body {
     background-size: 100vw 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    font-size: 2vh;
 }
 
 header {
     padding: 2vh 0;
+    font-size: 2vh;
 }
 
     header img {
@@ -73,7 +75,7 @@ nav {
 }
 
 .field_login {
-    width: 15vh;
+    width: 20vh;
     height: 30px;
     min-height: 30px;
     background: rgba(239, 23, 77, 0.6);

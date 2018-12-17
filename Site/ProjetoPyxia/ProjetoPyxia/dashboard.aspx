@@ -55,6 +55,10 @@
                                     <asp:DropDownList ID="ddlMachine" AutoPostBack="true" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu" OnSelectedIndexChanged="ddlMachine_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </li>
+                                <li>
+                                    <a href="relatorio.aspx" aria-expanded="true"><i class="ti-notepad"></i>
+                                        <span style="margin-left: 2.6rem">Relatórios</span></a>
+                                </li>
                                 <li style="margin-top: 23rem">
                                     <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>
                                         <span style="margin-left: 2.6rem">Sair</span></a>
@@ -131,7 +135,7 @@
                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
                                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                                                         <script src="Scripts/graficoProcessador.js">                                                                            
-                                                                        </script>
+                                                        </script>
                                                     </div>
                                                 </div>
                                                 <div class="card">
@@ -193,7 +197,7 @@
                                                         <canvas class="line" width="900" height="450"></canvas>
                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
                                                         <script src="Scripts/graficoMemoria.js">
-                                                                        </script>
+                                                        </script>
                                                     </div>
                                                 </div>
 

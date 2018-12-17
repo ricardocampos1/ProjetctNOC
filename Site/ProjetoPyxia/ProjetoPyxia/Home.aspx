@@ -59,7 +59,7 @@
                     <span>Com gráficos e alertas simples para você só se preocupar com o que realmente importa!</span>
                     <span>Gostou? Para ter tudo isso, basta realizar seu cadastro, instalar nossa aplicação e fazer seu
                         login</span>
-                    <a href="https://pyxia.file.core.windows.net/pyx-jar/DataCollector-1.0.4-jar-with-dependencies.jar?sv=2018-03-28&ss=bqtf&srt=sco&sp=rwdlacup&se=2018-12-14T20:24:34Z&sig=GUwWpMj9wIe7wMfbOKaLXewaYBuG9NPDD6Z3eBudkO4%3D&_=1544790312231">Baixar</a>
+                    <a href="https://pyxia.file.core.windows.net/pyx-jar/pyx-1.0.4.jar?sv=2018-03-28&ss=bqtf&srt=sco&sp=rwdlacup&se=2018-12-18T06:03:53Z&sig=Dy%2BUwZCpuPUdFeDrZbvM0BIsruAUT6KaI7vbUGKRXBo%3D&_=1545084296210">Baixar</a>
                     <span>Ficou com alguma dúvida? Acesse <a href="#">aqui</a> um passo a passo ou <a href="Fale.aspx">envie-nos
                             uma mensagem</a></span>
                 </section>

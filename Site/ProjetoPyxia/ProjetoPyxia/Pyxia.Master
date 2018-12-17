@@ -30,9 +30,9 @@
                     </ul>
                 </nav>
                 <div class="login_action">
-                 <asp:TextBox  runat ="server" type="text" placeholder="Usuário" ID="txtUserLogin" />
-                 <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordLogin" />
-                 <asp:Button Text="Entrar" runat="server" ID="BtnLogin" OnClick="BtnLogin_OnClick" />
+                    <asp:TextBox runat="server" type="text" placeholder="Usuário" ID="txtUserLogin" CssClass="field_login" />
+                    <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordLogin" CssClass="field_login" />
+                    <asp:Button Text="Entrar" runat="server" ID="BtnLogin" OnClick="BtnLogin_OnClick" CssClass="button_login" />
                 </div>
             </div>
         </div>
