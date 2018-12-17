@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/assets/css/default-css.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <link rel="stylesheet" href="css/stylePerfil.css"
+    <link rel="stylesheet" href="css/stylePerfil.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="Scripts/labelMemoriaRam.js"> </script>
@@ -47,8 +47,12 @@
                         <nav>
                             <ul class="metismenu" id="menu">
                                 <li>
-                                    <a href="#" aria-expanded="true"><i class="ti-user"></i>
+                                    <a href="Perfil.aspx" aria-expanded="true"><i class="ti-user"></i>
                                         <span style="margin-left: 2.6rem">Perfil</span></a>
+                                </li>
+                                <li>
+                                    <a href="relatorio.aspx" aria-expanded="true"><i class="ti-notepad"></i>
+                                        <span style="margin-left: 2.6rem">Relatórios</span></a>
                                 </li>
                                 <li style="margin-top: 23rem">
                                     <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>

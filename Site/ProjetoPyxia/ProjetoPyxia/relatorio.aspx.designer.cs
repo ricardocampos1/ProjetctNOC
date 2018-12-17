@@ -10,78 +10,51 @@
 namespace ProjetoPyxia {
     
     
-    public partial class Perfil {
+    public partial class relatorio {
         
         /// <summary>
-        /// Controle alterarPerfil.
+        /// Controle ddlComputer.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alterarPerfil;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComputer;
         
         /// <summary>
-        /// Controle novoNome.
+        /// Controle txtDataInicial.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox novoNome;
+        protected global::System.Web.UI.WebControls.TextBox txtDataInicial;
         
         /// <summary>
-        /// Controle btnNome.
+        /// Controle txtDataFinal.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNome;
+        protected global::System.Web.UI.WebControls.TextBox txtDataFinal;
         
         /// <summary>
-        /// Controle novoEmail.
+        /// Controle btnSearch.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox novoEmail;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// Controle btnEmail.
+        /// Controle gvResultFilter.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEmail;
-        
-        /// <summary>
-        /// Controle senhaAtual.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox senhaAtual;
-        
-        /// <summary>
-        /// Controle senhaNova.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox senhaNova;
-        
-        /// <summary>
-        /// Controle btnSenha.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSenha;
+        protected global::System.Web.UI.WebControls.GridView gvResultFilter;
     }
 }
