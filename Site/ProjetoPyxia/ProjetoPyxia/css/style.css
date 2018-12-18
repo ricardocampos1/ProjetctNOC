@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+    background-size: 100% 100%;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     font-size: 2vh;
@@ -40,6 +40,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header_action img {
+    width: 5vh;
 }
 
 nav {
@@ -75,7 +79,7 @@ nav {
 }
 
 .field_login {
-    width: 20vh;
+    width: 17vh;
     height: 30px;
     min-height: 30px;
     background: rgba(239, 23, 77, 0.6);
@@ -105,7 +109,21 @@ nav {
 
 
 @media only screen and (max-width: 800px) {
+    body {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
     .header_action {
         flex-direction: column;
+    }
+
+    nav ul li a {
+        font-size: 1.1vh;
+    }
+
+    .field_login {
+        width: 10vh;
     }
 }
