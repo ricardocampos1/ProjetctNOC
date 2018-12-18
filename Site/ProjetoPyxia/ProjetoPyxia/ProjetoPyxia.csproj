@@ -74,6 +74,7 @@
     <Content Include="css\styleFale.css" />
     <Content Include="css\styleHome.css" />
     <Content Include="css\styleOqPyxia.css" />
+    <Content Include="css\styleRelatorio.css" />
     <Content Include="Fale.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\background.jpg" />

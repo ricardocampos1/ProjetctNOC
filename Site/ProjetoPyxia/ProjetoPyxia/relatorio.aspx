@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/assets/css/default-css.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <link rel="stylesheet" href="css/stylePerfil.css" />
+    <link rel="stylesheet" href="css/styleRelatorio.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -95,31 +95,31 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div id="fields_filter" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 5vh">
+                    <div class="fields_filter">
                         <div>
                             <asp:Label Text="Escolha seu computador" runat="server" />
-                            <asp:DropDownList ID="ddlComputer" AutoPostBack="true" runat="server" AppendDataBoundItems="true">
+                            <asp:DropDownList ID="ddlComputer" AutoPostBack="true" runat="server" AppendDataBoundItems="true" CssClass="field">
                             </asp:DropDownList>
                         </div>
                         <div>
                             <asp:Label Text="Data inicial" runat="server" />
-                            <asp:TextBox runat="server" ID="txtDataInicial" TextMode="DateTimeLocal" />
+                            <asp:TextBox runat="server" ID="txtDataInicial" TextMode="DateTimeLocal" CssClass="field"/>
                         </div>
                         <div>
                             <asp:Label Text="Data final" runat="server" />
-                            <asp:TextBox runat="server" ID="txtDataFinal" TextMode="DateTimeLocal" />
+                            <asp:TextBox runat="server" ID="txtDataFinal" TextMode="DateTimeLocal" CssClass="field"/>
                         </div>
                         <div>
-                            <asp:Button Text="Pesquisar" runat="server" ID="btnSearch" OnClick="btnSearch_Click" />
+                            <asp:Button Text="Pesquisar" runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="button_search"/>
                         </div>
                     </div>
                     <div id="result_filter">
-                        <asp:GridView ID="gvResultFilter" runat="server" AutoGenerateColumns="false">
+                        <asp:GridView ID="gvResultFilter" runat="server" AutoGenerateColumns="false" CssClass="gv_Result_Filter">
                             <Columns>
-                                <asp:BoundField DataField="PROCESSOR_USAGE" HeaderText="Uso do Processor" />
-                                <asp:BoundField DataField="PROCESSOR_TEMPERATURE" HeaderText="Temperatura do Processor" />
-                                <asp:BoundField DataField="RAM_MEMORY_USAGE" HeaderText="Memória em uso" />
-                                <asp:BoundField DataField="RAM_MEMORY_AVAILABLE" HeaderText="Memória livre" />
+                                <asp:BoundField DataField="PROCESSOR_USAGE" HeaderText="Uso do Processor (%)" />
+                                <asp:BoundField DataField="PROCESSOR_TEMPERATURE" HeaderText="Temperatura do Processor (ºC)" />
+                                <asp:BoundField DataField="RAM_MEMORY_USAGE" HeaderText="Memória em uso (Bytes)" />
+                                <asp:BoundField DataField="RAM_MEMORY_AVAILABLE" HeaderText="Memória livre (Bytes)" />
                                 <asp:BoundField DataField="CURRENT_DT" HeaderText="Data da Captura" />
                                 <asp:BoundField DataField="NAME_MACHINE" HeaderText="Nome do Computador" />
                             </Columns>
