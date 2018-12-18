@@ -76,6 +76,7 @@
     <Content Include="css\styleOqPyxia.css" />
     <Content Include="css\styleRelatorio.css" />
     <Content Include="Fale.aspx" />
+    <Content Include="file\pyx-1.0.4.jar" />
     <Content Include="Home.aspx" />
     <Content Include="img\background.jpg" />
     <Content Include="img\dashboard.png" />
