@@ -42,7 +42,7 @@ namespace ProjetoPyxia
             {
                 conn.Open();
                 var sda = new SqlDataAdapter("select h.processor_usage, h.processor_temperature, h.ram_memory_usage, h.ram_memory_available, h.current_dt, m.name_machine from tb_historical h inner join tb_machine m on h.id_machine = m.id_machine where m.id_user = " + Session["id_user"], conn);
-                if (!string.IsNullOrEmpty(Session["dtInicial"] as string) && !string.IsNullOrEmpty(Session["dtFinal"] as string))
+                if (!string.IsNullOrEmpty(Session["dtInicial"] as string) && !string.IsNullOrEmpty(Session["dtFinal"] as string) && ddlComputer.SelectedValue.ToString() != "0")
                 {
                     sda = new SqlDataAdapter("select h.processor_usage, h.processor_temperature, h.ram_memory_usage, h.ram_memory_available, h.current_dt, m.name_machine from tb_historical h inner join tb_machine m on h.id_machine = m.id_machine where m.id_user = " + Session["id_user"] + " and m.id_machine = " + ddlComputer.SelectedValue.ToString() + " and h.current_dt between '" + Session["dtInicial"].ToString() + "' and '" + Session["dtFinal"].ToString() + "'", conn);
                 }

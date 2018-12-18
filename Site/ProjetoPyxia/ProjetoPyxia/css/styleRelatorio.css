@@ -1,0 +1,52 @@
+.fields_filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 5vh 0;
+}
+
+.fields_filter div {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    background: rgb(4, 3, 25);
+    color: #fff;
+    padding: 8px;
+    height: 5vh;
+    border: none;
+}
+
+.button_search {
+    background: rgb(4, 3, 25);
+    color: #fff;
+    padding: 8px;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button_search:hover {
+    background: rgba(4, 3, 25,0.9);
+    color: rgb(2, 237, 229);
+}
+
+.gv_Result_Filter th{
+    font-size: 3vh;
+    font-weight: bold;
+    background: rgb(4, 3, 25);
+    color: #fff;
+    padding: 8px;
+    border: 1px solid #fff;
+}
+
+.gv_Result_Filter td{
+    padding: 8px;
+    border: 1px solid #fff;
+}
+
+.gv_Result_Filter tr{
+    background: rgb(17, 160, 143);
+}
