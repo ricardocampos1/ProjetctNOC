@@ -1,7 +1,7 @@
 ﻿
 .ddl-contact {
     font-family: 'Ubuntu', sans-serif;
-    background: black;
+    background: rgba(0, 0, 0, 0.7);
     width: 181px;
     margin: 0 0 13px;
     box-sizing: border-box;
@@ -11,6 +11,7 @@
     text-align: center;
     height: 25px;
     color: #fff;
+    padding: 3px;
 }
 
 .resposta {
@@ -24,6 +25,7 @@
     border-width: 2px;
     border-style: solid;
     border-color: #ff007f;
+    padding-bottom: 5px;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -36,7 +38,7 @@
 .input1 {
     font-family: 'Ubuntu', sans-serif;
     outline: 0;
-    background: black;
+    background: rgba(0, 0, 0, 0.7);
     width: 181px;
     margin: 0 0 13px;
     padding: 12px;
@@ -50,32 +52,31 @@
 }
 
 .form {
-    position: relative;
-    z-index: 1;
-    background-color: transparent;
-    max-width: 450px;
-    margin: 0 auto;
-    width: 450px;
-    padding: 60px 50px 50px;
-    text-align: center;
-    border-radius: 10px;
-    display: block;
-    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 200px;
 }
 
 .pergunta {
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 400;
-    color: #fff
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .text-area {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     border: 0px;
     height: 150px;
+    padding: 10px 0 0 10px;
+    border-radius: 6px;
+    resize: none;
+    width: 500px;
 }
 
 .botão {
@@ -118,7 +119,7 @@ p {
 @media only screen and (max-width: 800px) {
     .ddl-contact {
         font-family: 'Ubuntu', sans-serif;
-        background: black;
+        background: rgba(0, 0, 0, 0.7);
         width: 181px;
         margin: 0 0 13px;
         box-sizing: border-box;
@@ -153,7 +154,7 @@ p {
     .input1 {
         font-family: 'Ubuntu', sans-serif;
         outline: 0;
-        background: black;
+        background: rgba(0, 0, 0, 0.7);
         width: 181px;
         margin: 0 0 13px;
         padding: 12px;
@@ -190,7 +191,7 @@ p {
     }
 
     .text-area {
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.7);
         color: #fff;
         border: 0px;
     }
