@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body {
+    background-image: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+    color: #fff;
+}
+
+header {
+    padding: 2vh 0;
+    font-size: 2vh;
+}
+
+    header img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+.container {
+    width: 100vw;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.header_action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header_action img {
+        width: 5vh;
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+    nav ul {
+        display: flex;
+        align-content: center;
+    }
+
+        nav ul li {
+            margin: 3vh 0;
+        }
+
+            nav ul li a {
+                border: none;
+                background: transparent;
+                border-radius: 3px;
+                padding: 3vh 3vw;
+                transition: ease-in 0.3s;
+                color: #fff;
+            }
+
+                nav ul li a:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+
+.login_action {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.field_login {
+    width: 17vh;
+    height: 30px;
+    min-height: 30px;
+    background: rgba(239, 23, 77, 0.6);
+    border: none;
+    border-radius: 3px;
+    padding: 1vh 1vw;
+    margin-right: 20px;
+    color: #fff
+}
+
+::placeholder {
+    color: rgb(200,200,200);
+    opacity: 1;
+}
+
+.button_login {
+    background: rgba(17, 160, 143,1);
+    border: none;
+    border-radius: 3px;
+    padding: 1vh 1vw;
+    transition: ease-in 0.3s;
+    cursor: pointer;
+    color: #fff;
+}
+
+    .button_login:hover {
+        background: rgba(17, 160, 143, 0.6);
+    }
+
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .header_action {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        font-size: 1.1vh;
+    }
+
+    .field_login {
+        width: 10vh;
+    }
+}

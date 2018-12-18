@@ -1,0 +1,61 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+}
+
+.container-pyxia {
+    display: grid;
+    grid-template-rows: 10% 15% 58%;
+    height: 80vh;
+}
+
+.pyxia-title {
+    color:white;
+    margin-left:5%;
+    margin-top: 3%;
+    font-size:24px;
+    border-bottom: 2px solid #ff007f;
+    padding-bottom: 5px;
+    width: 17%;
+}
+
+.description-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    padding: 20px 60px;
+    line-height: 20px;
+}
+
+.pyxia-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 80px 35vh 80px;
+    margin: 60px;
+}
+
+.img-pyx {
+    width: 50%;
+}
+
+.pyxia-desc {
+    display: grid;
+    grid-template-rows: 30% 30%;
+    margin-top: 40px;
+    grid-gap: 20px;
+}
+
+.frist-paragraph {
+    align-self: center;
+    padding-bottom: 40px;
+}
+
+p {
+    text-align: justify;
+    color: white;
+    font-size:18px;
+}
+
+   

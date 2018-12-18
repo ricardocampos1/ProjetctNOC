@@ -24,6 +24,29 @@
     <script src="Scripts/labelMemoriaRam.js"> </script>
     <script src="Scripts/labelMemoryRamLivre.js"></script>
     <script src="Scripts/labelTemperature.js"></script>
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </head>
 <body class="">
     <form runat="server">
@@ -37,8 +60,8 @@
             <div class="sidebar-menu">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/Imagem1.png" alt="imagem" /></a>
+                        <a href="Home.aspx">
+                            <img src="img/logo_pyxia.png" alt="imagem" /></a>
                     </div>
                 </div>
                 <!-- Classe ti-(um atributo) refere-se a icones contidos no css themify-icons.css -->
@@ -55,8 +78,12 @@
                                     <asp:DropDownList ID="ddlMachine" AutoPostBack="true" runat="server" AppendDataBoundItems="true" CssClass="ddl-menu" OnSelectedIndexChanged="ddlMachine_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </li>
+                                <li>
+                                    <a href="relatorio.aspx" aria-expanded="true"><i class="ti-notepad"></i>
+                                        <span style="margin-left: 2.6rem">Relatórios</span></a>
+                                </li>
                                 <li style="margin-top: 23rem">
-                                    <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
+                                    <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>
                                         <span style="margin-left: 2.6rem">Sair</span></a>
                                 </li>
                             </ul>
@@ -79,7 +106,7 @@
                                 </div>
                                 <h4 class="page-title pull-left">Dashboard</h4>
                                 <ul class="breadcrumbs pull-left">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="Home.aspx">Home</a></li>
                                     <li><span>Dashboard</span></li>
                                 </ul>
                             </div>
@@ -131,7 +158,7 @@
                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
                                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                                                         <script src="Scripts/graficoProcessador.js">                                                                            
-                                                                        </script>
+                                                        </script>
                                                     </div>
                                                 </div>
                                                 <div class="card">
@@ -193,7 +220,7 @@
                                                         <canvas class="line" width="900" height="450"></canvas>
                                                         <!--Biblioteca do Chart.js para apresentação do grafico -->
                                                         <script src="Scripts/graficoMemoria.js">
-                                                                        </script>
+                                                        </script>
                                                     </div>
                                                 </div>
 

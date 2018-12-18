@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="ProjetoPyxia.Perfil" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,12 +19,35 @@
     <link rel="stylesheet" href="/assets/css/default-css.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <link rel="stylesheet" href="css/stylePerfil.css"
+    <link rel="stylesheet" href="css/stylePerfil.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="Scripts/labelMemoriaRam.js"> </script>
     <script src="Scripts/labelMemoryRamLivre.js"></script>
     <script src="Scripts/labelTemperature.js"></script>
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </head>
 <body class="">
     <form runat="server">
@@ -37,8 +61,8 @@
             <div class="sidebar-menu">
                 <div class="sidebar-header">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/Imagem1.png" alt="imagem" /></a>
+                        <a href="Home.aspx">
+                            <img src="img/logo_pyxia.png" alt="imagem" /></a>
                     </div>
                 </div>
                 <!-- Classe ti-(um atributo) refere-se a icones contidos no css themify-icons.css -->
@@ -47,11 +71,15 @@
                         <nav>
                             <ul class="metismenu" id="menu">
                                 <li>
-                                    <a href="invoice.html" aria-expanded="true"><i class="ti-user"></i>
+                                    <a href="Perfil.aspx" aria-expanded="true"><i class="ti-user"></i>
                                         <span style="margin-left: 2.6rem">Perfil</span></a>
                                 </li>
+                                <li>
+                                    <a href="relatorio.aspx" aria-expanded="true"><i class="ti-notepad"></i>
+                                        <span style="margin-left: 2.6rem">Relatórios</span></a>
+                                </li>
                                 <li style="margin-top: 23rem">
-                                    <a href="Homepage.aspx" aria-expanded="true"><i class="ti-back-left"></i>
+                                    <a href="Home.aspx" aria-expanded="true"><i class="ti-back-left"></i>
                                         <span style="margin-left: 2.6rem">Sair</span></a>
                                 </li>
                             </ul>
@@ -74,7 +102,7 @@
                                 </div>
                                 <h4 class="page-title pull-left">Dashboard</h4>
                                 <ul class="breadcrumbs pull-left">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="Home.aspx">Home</a></li>
                                     <li><a href="dashboard.aspx">Dashboard</a></li>
                                     <li><span>Perfil</span></li>
                                 </ul>
@@ -93,7 +121,7 @@
                 </div>
 
 
-               <div id="alterarPerfil" runat="server">
+                <div id="alterarPerfil" runat="server">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 clearfix">
@@ -122,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
 
 

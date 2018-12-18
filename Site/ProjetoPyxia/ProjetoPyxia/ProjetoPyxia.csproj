@@ -67,7 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="ComoFunciona.aspx" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\styleComo.css" />
+    <Content Include="css\styleFale.css" />
+    <Content Include="css\styleHome.css" />
+    <Content Include="css\styleOqPyxia.css" />
+    <Content Include="css\styleRelatorio.css" />
+    <Content Include="Fale.aspx" />
+    <Content Include="file\pyx-1.0.4.jar" />
+    <Content Include="Home.aspx" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\dashboard.png" />
+    <Content Include="img\graficos.png" />
+    <Content Include="img\hd.png" />
+    <Content Include="img\logo_pyxia.png" />
+    <Content Include="img\nova3.png" />
+    <Content Include="img\processador.png" />
+    <Content Include="img\Pyx.png" />
+    <Content Include="OquePyxia.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\default-css.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -93,7 +112,6 @@
     <Content Include="assets\js\scripts.js" />
     <Content Include="assets\js\vendor\jquery-2.2.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
-    <Content Include="Cadastro.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -101,16 +119,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\logincss.css" />
     <Content Include="css\styleCadastro.css" />
-    <Content Include="css\styleFale.css" />
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleMaster.css" />
     <Content Include="css\stylePerfil.css" />
     <Content Include="css\styleProjeto.css" />
     <Content Include="dashboard.aspx" />
-    <Content Include="FaleConosco.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Homepage.aspx" />
     <Content Include="img\2.1.jpeg" />
     <Content Include="img\2.jpg" />
     <Content Include="img\3.jpg" />
@@ -118,10 +133,9 @@
     <Content Include="img\fundo.jpg" />
     <Content Include="img\img0.png" />
     <Content Include="img\img_avatar2.png" />
-    <Content Include="Login.aspx" />
     <Content Include="PaginaAjax.aspx" />
     <Content Include="Perfil.aspx" />
-    <Content Include="Projeto.aspx" />
+    <Content Include="relatorio.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\graficoDisco.js" />
@@ -161,19 +175,40 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="ComoFunciona.aspx.cs">
+      <DependentUpon>ComoFunciona.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="ComoFunciona.aspx.designer.cs">
+      <DependentUpon>ComoFunciona.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro.aspx.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
+    <Compile Include="Fale.aspx.cs">
+      <DependentUpon>Fale.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cadastro.aspx.designer.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
+    <Compile Include="Fale.aspx.designer.cs">
+      <DependentUpon>Fale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OquePyxia.aspx.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OquePyxia.aspx.designer.cs">
+      <DependentUpon>OquePyxia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pyxia.Master.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pyxia.Master.designer.cs">
+      <DependentUpon>Pyxia.Master</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -181,27 +216,6 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FaleConosco.aspx.cs">
-      <DependentUpon>FaleConosco.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FaleConosco.aspx.designer.cs">
-      <DependentUpon>FaleConosco.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Homepage.aspx.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Homepage.aspx.designer.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaAjax.aspx.cs">
       <DependentUpon>PaginaAjax.aspx</DependentUpon>
@@ -217,20 +231,13 @@
     <Compile Include="Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Projeto.aspx.cs">
-      <DependentUpon>Projeto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Projeto.aspx.designer.cs">
-      <DependentUpon>Projeto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pyxia.Master.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
+    <Compile Include="relatorio.aspx.cs">
+      <DependentUpon>relatorio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pyxia.Master.designer.cs">
-      <DependentUpon>Pyxia.Master</DependentUpon>
+    <Compile Include="relatorio.aspx.designer.cs">
+      <DependentUpon>relatorio.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +267,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
