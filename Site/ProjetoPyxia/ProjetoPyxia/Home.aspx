@@ -13,6 +13,29 @@
     <%--<link rel="stylesheet" href="/css/bootstrap.min.css" />--%>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
     <title>Pyxia</title>
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </head>
 <body>
 
@@ -45,12 +68,12 @@
                 <section class="content_account">
                     <span>Com um simples account você já pode começar a usar!
                     </span>
-                    <asp:TextBox runat="server" type="email" placeholder="exemplo@exemplo.com.br" ID="txtEmailRegister" />
-                    <asp:TextBox runat="server" type="text" placeholder="exemplo" ID="txtUserRegister" />
-                    <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordRegister" />
-                    <asp:TextBox runat="server" type="password" placeholder="Confime a senha" ID="txtPasswordConfirmRegister" />
+                    <asp:TextBox runat="server" type="email" placeholder="E-mail" ID="txtEmailRegister" CssClass="field_register" />
+                    <asp:TextBox runat="server" type="text" placeholder="Usuário" ID="txtUserRegister" CssClass="field_register" />
+                    <asp:TextBox runat="server" type="password" placeholder="Senha" ID="txtPasswordRegister" CssClass="field_register" />
+                    <asp:TextBox runat="server" type="password" placeholder="Confime a senha" ID="txtPasswordConfirmRegister" CssClass="field_register" />
                     <label>Data de Nascimento</label>
-                    <asp:TextBox runat="server" type="text" TextMode="Date" ID="txtDateRegister"/>
+                    <asp:TextBox runat="server" type="text" TextMode="Date" ID="txtDateRegister" CssClass="field_register" />
                     <asp:Button Text="Cadastrar" runat="server" ID="BtnUserRegister" OnClick="BtnUserRegister_OnClick" CssClass="button_register" />
                     <span>Pronto! Agora, faça seu login na aplicação e no topo do site</span>
                 </section>

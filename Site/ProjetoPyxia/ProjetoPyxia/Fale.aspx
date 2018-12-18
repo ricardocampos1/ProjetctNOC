@@ -11,6 +11,29 @@
     <link rel="stylesheet" href="/css/stylefale.css" />
     <%--<link rel="stylesheet" href="/css/bootstrap.min.css" />--%>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
     <title>Pyxia</title>
 </head>
 <body>

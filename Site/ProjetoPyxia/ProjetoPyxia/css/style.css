@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     z-index: 1;
-    color: #fff;
 }
 
 a {
@@ -18,6 +17,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     font-size: 2vh;
+    color: #fff;
 }
 
 header {
@@ -42,9 +42,9 @@ header {
     align-items: center;
 }
 
-.header_action img {
-    width: 5vh;
-}
+    .header_action img {
+        width: 5vh;
+    }
 
 nav {
     display: flex;
@@ -66,6 +66,7 @@ nav {
                 border-radius: 3px;
                 padding: 3vh 3vw;
                 transition: ease-in 0.3s;
+                color: #fff;
             }
 
                 nav ul li a:hover {
@@ -87,6 +88,7 @@ nav {
     border-radius: 3px;
     padding: 1vh 1vw;
     margin-right: 20px;
+    color: #fff
 }
 
 ::placeholder {
@@ -115,6 +117,7 @@ nav {
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
+
     .header_action {
         flex-direction: column;
     }
