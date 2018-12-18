@@ -22,6 +22,29 @@
     <link rel="stylesheet" href="css/styleRelatorio.css" />
     <!-- modernizr css -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </head>
 <body class="">
     <form runat="server">
@@ -103,14 +126,14 @@
                         </div>
                         <div>
                             <asp:Label Text="Data inicial" runat="server" />
-                            <asp:TextBox runat="server" ID="txtDataInicial" TextMode="DateTimeLocal" CssClass="field"/>
+                            <asp:TextBox runat="server" ID="txtDataInicial" TextMode="DateTimeLocal" CssClass="field" />
                         </div>
                         <div>
                             <asp:Label Text="Data final" runat="server" />
-                            <asp:TextBox runat="server" ID="txtDataFinal" TextMode="DateTimeLocal" CssClass="field"/>
+                            <asp:TextBox runat="server" ID="txtDataFinal" TextMode="DateTimeLocal" CssClass="field" />
                         </div>
                         <div>
-                            <asp:Button Text="Pesquisar" runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="button_search"/>
+                            <asp:Button Text="Pesquisar" runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="button_search" />
                         </div>
                     </div>
                     <div id="result_filter">

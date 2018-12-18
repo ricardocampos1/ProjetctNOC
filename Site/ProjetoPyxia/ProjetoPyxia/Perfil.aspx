@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="ProjetoPyxia.Perfil" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,6 +25,29 @@
     <script src="Scripts/labelMemoriaRam.js"> </script>
     <script src="Scripts/labelMemoryRamLivre.js"></script>
     <script src="Scripts/labelTemperature.js"></script>
+    <script type="text/javascript">
+        (function (d, m) {
+
+            /*---------------- Kommunicate settings start ----------------*/
+
+            var kommunicateSettings = {
+                "appId": "36228526f43171726753233412d214a0d",
+                "conversationTitle": "Pyx",
+                "botIds": ["pyx"]
+            };
+
+            /*----------------- Kommunicate settings end ------------------*/
+
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://api.kommunicate.io/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </head>
 <body class="">
     <form runat="server">
@@ -97,7 +121,7 @@
                 </div>
 
 
-               <div id="alterarPerfil" runat="server">
+                <div id="alterarPerfil" runat="server">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 clearfix">
@@ -126,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
 
 
