@@ -59,7 +59,7 @@
                 <div class="sidebar-header">
                     <div class="logo">
                         <a href="Home.aspx">
-                            <img src="assets/images/Imagem1.png" alt="imagem" /></a>
+                            <img src="img/logo_pyxia.png" alt="imagem" /></a>
                     </div>
                 </div>
                 <!-- Classe ti-(um atributo) refere-se a icones contidos no css themify-icons.css -->
